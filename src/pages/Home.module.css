@@ -1,0 +1,10 @@
+.container {
+  color: var(--flashcard-text-color);
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
