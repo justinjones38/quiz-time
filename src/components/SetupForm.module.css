@@ -1,0 +1,32 @@
+.form {
+  width: 85%;
+  margin: 0 auto;
+}
+
+
+.question {
+  display: flex;
+  gap: 1em;
+}
+
+.quizType {
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+  transition: 0.3s background-color;
+}
+
+.quizType:hover, .quizType:active {
+  cursor: pointer;
+  background-color: var(--selected-bg-hover-color);
+}
+
+
+.quizType:has(.radioBtn:checked){
+  background-color: var(--selected-bg-color);
+}
+
+.radioBtn {
+  display: none;
+  padding: 0;
+  margin: 0;
+}

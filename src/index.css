@@ -16,6 +16,8 @@ CSS VARIABLES
   /* Background Colors */
   --body-bg-color: #23295CEE;
   --flashcard-bg-color: #fcfcfc;
+  --selected-bg-color: #7a85eaee;
+  --selected-bg-hover-color: #7a85ea74;
 
   /* Font Colors */
   --primary-text-color: #FCFCFC;
