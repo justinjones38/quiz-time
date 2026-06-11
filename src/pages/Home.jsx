@@ -1,6 +1,6 @@
 import styles from "./Home.module.css"
 import { useOutletContext } from "react-router"
-import SetupForm from "../components/SetupForm"
+import SetupForm from "../components/setup-questions/SetupForm"
 
 export default function Home() {
   return (

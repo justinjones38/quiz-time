@@ -4,7 +4,9 @@ import { useState } from "react";
 
 export default function Layout() {
   const [setupAnswers, setSetupAnswers] = useState({
-    quizType: ""
+    quizType: "",
+    categories: [],
+    difficulties: []
   });
 
   const updateSetupAnswers = (newName, newVal) => {

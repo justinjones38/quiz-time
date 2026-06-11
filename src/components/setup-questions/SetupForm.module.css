@@ -1,0 +1,14 @@
+.form {
+  width: 85%;
+  margin: 0 auto;
+}
+
+
+.question {
+  display: flex;
+  gap: 1em;
+}
+
+.questionTitle {
+  margin-bottom: 0.5em;
+}

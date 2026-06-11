@@ -1,16 +1,6 @@
-.form {
-  width: 85%;
-  margin: 0 auto;
-}
-
-
-.question {
-  display: flex;
-  gap: 1em;
-}
-
 .quizType {
   padding: 0.5em;
+  border: 1px solid #000;
   border-radius: var(--border-radius);
   transition: 0.3s background-color;
 }
@@ -21,11 +11,11 @@
 }
 
 
-.quizType:has(.radioBtn:checked){
+.quizType:has(.inputBtn:checked){
   background-color: var(--selected-bg-color);
 }
 
-.radioBtn {
+.inputBtn {
   display: none;
   padding: 0;
   margin: 0;
