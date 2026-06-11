@@ -1,0 +1,13 @@
+.mainContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bodyContainer {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 200px;
+  background-color: var(--flashcard-bg-color);
+}

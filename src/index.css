@@ -59,3 +59,11 @@ h1 {
   font-weight: 700;
   margin-bottom: 3em;
 }
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1em;
+  color: var(--flashcard-text-color);
+}
