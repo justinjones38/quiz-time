@@ -9,11 +9,25 @@ export default function Layout() {
     difficulties: []
   });
 
-  const updateSetupAnswers = (newName, newVal) => {
+  const updateRadioAnswers = (newName, newVal) => {
     setSetupAnswers(prev => ({
       ...prev,
       [newName]: newVal
     }))
+  }
+
+  const updateCheckListAnswers = (newName, newVal) => {
+    if(setupAnswers[newName].includes(newVal)) {
+      setSetupAnswers(prev => ({
+        ...prev,
+        [newName]: prev[newName].filter(item => item !== newVal)
+      }))
+    } else {
+      setSetupAnswers(prev => ({
+        ...prev,
+        [newName]: [...prev[newName], newVal]
+      }))
+    }
   }
 
   console.log(setupAnswers);
@@ -22,7 +36,7 @@ export default function Layout() {
     <div className={styles.mainContainer}>
       <h1 className={styles.title}>Quiz Time</h1>
       <div className={styles.bodyContainer}>
-        <Outlet context={{setupAnswers, updateSetupAnswers}} />
+        <Outlet context={{setupAnswers, updateRadioAnswers, updateCheckListAnswers}} />
       </div>
     </div>
   )

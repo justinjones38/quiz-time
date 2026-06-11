@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router";
 
 
 export default function SetupRadioQuestion({ item, name }) {
-  const {setupAnswers, updateSetupAnswers} = useOutletContext();
+  const {setupAnswers, updateRadioAnswers} = useOutletContext();
   return (
     <label
       htmlFor={item.camelCase}
@@ -17,7 +17,7 @@ export default function SetupRadioQuestion({ item, name }) {
         name={name}
         value={item.camelCase}
         checked={setupAnswers.quizType === item.camelCase}
-        onChange={(e) => updateSetupAnswers(e.target.name, e.target.value)}
+        onChange={(e) => updateRadioAnswers(e.target.name, e.target.value)}
       />
       {item.text}
     </label>
