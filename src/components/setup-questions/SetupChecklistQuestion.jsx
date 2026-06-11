@@ -4,7 +4,6 @@ import { useOutletContext } from "react-router";
 
 export default function SetupChecklistQuestion({ item, name }) {
   const {setupAnswers, updateCheckListAnswers} = useOutletContext();
-  console.log(item, name, updateCheckListAnswers);
   return (
     <label
       htmlFor={item.camelCase}
@@ -17,7 +16,7 @@ export default function SetupChecklistQuestion({ item, name }) {
         className={styles.inputBtn}
         name={name}
         value={item.camelCase}
-        checked={setupAnswers.categories.includes(item.camelCase)}
+        checked={setupAnswers[name].includes(item.camelCase)}
         onChange={(e) => updateCheckListAnswers(e.target.name, e.target.value)}
       />
       {item.text}

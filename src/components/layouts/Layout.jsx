@@ -17,6 +17,8 @@ export default function Layout() {
   }
 
   const updateCheckListAnswers = (newName, newVal) => {
+    console.log(newName, newVal);
+    console.log(setupAnswers);
     if(setupAnswers[newName].includes(newVal)) {
       setSetupAnswers(prev => ({
         ...prev,

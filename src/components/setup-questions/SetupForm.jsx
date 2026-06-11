@@ -8,7 +8,7 @@ export default function SetupForm({}) {
     <form className={styles.form}>
       <fieldset>
         <legend className={styles.questionTitle}>
-          What type of quiz do you want? (Please only select 1)
+          What type of quiz do you want? <span>(Please select at least 1)</span>
         </legend>
         <div className={styles.question}>
           {data.quizType.map((item) => (
@@ -19,7 +19,7 @@ export default function SetupForm({}) {
 
       <fieldset>
         <legend className={styles.questionTitle}>
-          What categories of questions do you want for the quiz? (Please select at least 1)
+          What categories of questions do you want for the quiz? <span>(Please select at least 1)</span>
         </legend>
         <div className={styles.question}>
           {data.categories.map((item) => (
@@ -30,7 +30,7 @@ export default function SetupForm({}) {
 
       <fieldset>
         <legend className={styles.questionTitle}>
-          What level of difficulty do you want from the quiz? (Please select at least 1)
+          What level of difficulty do you want from the quiz? <span>(Please select at least 1)</span>
         </legend>
         <div className={styles.question}>
           {data.difficulties.map((item) => (

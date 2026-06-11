@@ -8,9 +8,13 @@
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
-  
+
 }
 
 .questionTitle {
   margin-bottom: 0.5em;
+}
+
+.questionTitle > span {
+  font-weight: 200;
 }
