@@ -1,0 +1,22 @@
+.quizType {
+  padding: 0.5em;
+  border: 1px solid #000;
+  border-radius: var(--border-radius);
+  transition: 0.3s background-color;
+}
+
+.quizType:hover,
+.quizType:active {
+  cursor: pointer;
+  background-color: var(--selected-bg-hover-color);
+}
+
+.quizType:has(.inputBtn:checked) {
+  background-color: var(--selected-bg-color);
+}
+
+.inputBtn {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
