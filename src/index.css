@@ -23,6 +23,11 @@ CSS VARIABLES
   --primary-text-color: #FCFCFC;
   --flashcard-text-color: #242424;
 
+  /* Button Colors */
+  --button-bg-color: #ababfec5;
+  --button-bg-disabled-color: #ababfe6b;
+  --button-text-color: #fcfcfc;
+
   /* Reusable Properties */
   --border-radius: 10px;
   --flashcard-border: 1px solid #1a1a1a6a;
@@ -64,7 +69,7 @@ h1 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 h2 {

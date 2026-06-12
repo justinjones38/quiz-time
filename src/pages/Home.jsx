@@ -7,7 +7,7 @@ export default function Home() {
   <div className={styles.container}>
     <h2 className={styles.pageTitle}>Welcome to Quiz Time!</h2>
     <p className={styles.description}>
-      Please answer the questions below to get started with your questions
+      Please answer the questions below to get started with your quiz
     </p>
     <SetupForm />
   </div>

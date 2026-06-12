@@ -2,8 +2,13 @@ import styles from "./SetupForm.module.css";
 import { data } from "../../utils/data";
 import SetupRadioQuestion from "./SetupRadioQuestion";
 import SetupChecklistQuestion from "./SetupChecklistQuestion";
+import PrimaryBtn from "../Buttons/PrimaryBtn";
+import { useOutletContext } from "react-router";
 
 export default function SetupForm({}) {
+  const {setupAnswers} = useOutletContext();
+  const isBtnDisabled = !setupAnswers.quizType && !setupAnswers.categories.length > 0 || !setupAnswers.difficulties.length > 0;
+  console.log(isBtnDisabled);
   return (
     <form className={styles.form}>
       <fieldset>
@@ -38,6 +43,9 @@ export default function SetupForm({}) {
           ))}
         </div>
       </fieldset>
+      <div className={styles.btnContainer}>
+        <PrimaryBtn disabled={isBtnDisabled}>Next</PrimaryBtn>
+      </div>
     </form>
   );
 }

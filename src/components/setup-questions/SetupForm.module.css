@@ -18,3 +18,8 @@
 .questionTitle > span {
   font-weight: 200;
 }
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
