@@ -3,16 +3,18 @@ import { data } from "../../utils/data";
 import SetupRadioQuestion from "./SetupRadioQuestion";
 import SetupChecklistQuestion from "./SetupChecklistQuestion";
 import PrimaryBtn from "../buttons/PrimaryBtn";
-import { useOutletContext } from "react-router";
+import { useNavigate, useOutletContext, } from "react-router";
 
 export default function SetupForm({}) {
   const { setupAnswers } = useOutletContext();
+  const navigate = useNavigate()
   const isBtnDisabled =
     (!setupAnswers.quizType && !setupAnswers.categories.length > 0) ||
     !setupAnswers.difficulties.length > 0;
 
-    const handleBtnClick = () => {
-      
+    const handleBtnClick = (e) => {
+      e.preventDefault();
+      navigate("/quiz");
     }
   return (
     <form className={styles.form}>
@@ -59,7 +61,7 @@ export default function SetupForm({}) {
         </div>
       </fieldset>
       <div className={styles.btnContainer}>
-        <PrimaryBtn disabled={isBtnDisabled}>Next</PrimaryBtn>
+        <PrimaryBtn onClick={handleBtnClick} disabled={isBtnDisabled}>Next</PrimaryBtn>
       </div>
     </form>
   );
