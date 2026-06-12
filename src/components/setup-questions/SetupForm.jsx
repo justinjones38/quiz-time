@@ -2,7 +2,7 @@ import styles from "./SetupForm.module.css";
 import { data } from "../../utils/data";
 import SetupRadioQuestion from "./SetupRadioQuestion";
 import SetupChecklistQuestion from "./SetupChecklistQuestion";
-import PrimaryBtn from "../Buttons/PrimaryBtn";
+import PrimaryBtn from "../btns/PrimaryBtn";
 import { useOutletContext } from "react-router";
 
 export default function SetupForm({}) {
@@ -10,7 +10,10 @@ export default function SetupForm({}) {
   const isBtnDisabled =
     (!setupAnswers.quizType && !setupAnswers.categories.length > 0) ||
     !setupAnswers.difficulties.length > 0;
-  console.log(isBtnDisabled);
+
+    const handleBtnClick = () => {
+      
+    }
   return (
     <form className={styles.form}>
       <fieldset>
