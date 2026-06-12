@@ -2,7 +2,7 @@ import styles from "./SetupForm.module.css";
 import { data } from "../../utils/data";
 import SetupRadioQuestion from "./SetupRadioQuestion";
 import SetupChecklistQuestion from "./SetupChecklistQuestion";
-import PrimaryBtn from "../btns/PrimaryBtn";
+import PrimaryBtn from "../buttons/PrimaryBtn";
 import { useOutletContext } from "react-router";
 
 export default function SetupForm({}) {
