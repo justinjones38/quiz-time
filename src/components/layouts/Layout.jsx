@@ -32,7 +32,6 @@ export default function Layout() {
     }
   };
 
-  console.log(setupAnswers);
 
   return (
     <div className={styles.mainContainer}>
