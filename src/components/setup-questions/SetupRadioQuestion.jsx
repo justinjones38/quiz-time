@@ -1,9 +1,8 @@
 import styles from "./SetupQuestion.module.css";
 import { useOutletContext } from "react-router";
 
-
 export default function SetupRadioQuestion({ item, name }) {
-  const {setupAnswers, updateRadioAnswers} = useOutletContext();
+  const { setupAnswers, updateRadioAnswers } = useOutletContext();
   return (
     <label
       htmlFor={item.camelCase}

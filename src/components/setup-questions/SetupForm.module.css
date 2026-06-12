@@ -3,12 +3,10 @@
   margin: 0 auto;
 }
 
-
 .question {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
-
 }
 
 .questionTitle {

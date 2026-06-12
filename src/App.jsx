@@ -1,4 +1,4 @@
-import styles from "./App.module.css"
+import styles from "./App.module.css";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Layout from "./components/layouts/Layout";
@@ -9,8 +9,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-         </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }

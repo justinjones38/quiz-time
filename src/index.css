@@ -2,7 +2,9 @@
 RESET CSS
 ================== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,13 +16,13 @@ CSS VARIABLES
 
 :root {
   /* Background Colors */
-  --body-bg-color: #23295CEE;
+  --body-bg-color: #23295cee;
   --flashcard-bg-color: #fcfcfc;
   --selected-bg-color: #7a85eaee;
   --selected-bg-hover-color: #7a85ea74;
 
   /* Font Colors */
-  --primary-text-color: #FCFCFC;
+  --primary-text-color: #fcfcfc;
   --flashcard-text-color: #242424;
 
   /* Button Colors */
@@ -31,9 +33,7 @@ CSS VARIABLES
   /* Reusable Properties */
   --border-radius: 10px;
   --flashcard-border: 1px solid #1a1a1a6a;
-
 }
-
 
 /* ===============
 GENERAL LAYOUT
@@ -46,7 +46,8 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-button, a {
+button,
+a {
   font-family: inherit;
 }
 
@@ -59,7 +60,6 @@ fieldset {
   border: none;
   margin-bottom: 2em;
 }
-
 
 /* ===============
 TYPOGRAPHY

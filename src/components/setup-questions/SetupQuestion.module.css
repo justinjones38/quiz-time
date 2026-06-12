@@ -5,13 +5,13 @@
   transition: 0.3s background-color;
 }
 
-.quizType:hover, .quizType:active {
+.quizType:hover,
+.quizType:active {
   cursor: pointer;
   background-color: var(--selected-bg-hover-color);
 }
 
-
-.quizType:has(.inputBtn:checked){
+.quizType:has(.inputBtn:checked) {
   background-color: var(--selected-bg-color);
 }
 

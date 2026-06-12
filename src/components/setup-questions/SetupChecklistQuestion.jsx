@@ -1,9 +1,8 @@
 import styles from "./SetupQuestion.module.css";
 import { useOutletContext } from "react-router";
 
-
 export default function SetupChecklistQuestion({ item, name }) {
-  const {setupAnswers, updateCheckListAnswers} = useOutletContext();
+  const { setupAnswers, updateCheckListAnswers } = useOutletContext();
   return (
     <label
       htmlFor={item.camelCase}
