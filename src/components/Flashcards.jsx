@@ -3,8 +3,9 @@ import styles from "./Flashcards.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Link, Navigate } from "react-router";
+import { shuffleArr } from "../utils/helper";
 
-export default function Flashcards({ quizData, shuffleCards }) {
+export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
 
@@ -25,6 +26,10 @@ export default function Flashcards({ quizData, shuffleCards }) {
   const resetCardDeck = () => {
     setCardNumber(0);
     setIsQuestionShown(true);
+  }
+
+  const shuffle = () => {
+    setQuizData((prev) => shuffleArr(prev));
   }
 
   return (
@@ -70,7 +75,7 @@ export default function Flashcards({ quizData, shuffleCards }) {
         </button>
       </div>
         <div className={styles.settingBtnContainer}>
-          <button className={styles.settingBtn} onClick={shuffleCards}>Shuffle Cards</button>
+          <button className={styles.settingBtn} onClick={shuffle}>Shuffle Cards</button>
           {cardNumber > 0 ? <button onClick={resetCardDeck} className={styles.settingBtn}> Reset Card Deck</button> : null}
         </div>
         <div className={styles.linkContainer}>
