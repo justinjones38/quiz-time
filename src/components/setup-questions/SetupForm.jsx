@@ -9,9 +9,7 @@ import { useState } from "react";
 export default function SetupForm({}) {
   const { setupAnswers, resetSettings } = useOutletContext();
   const navigate = useNavigate();
-  console.log(setupAnswers);
   const isTextQuestions = setupAnswers.quizType === "textBased";
-  console.log(isTextQuestions);
   const isBtnDisabled = !setupAnswers.quizType;
 
   const handleBtnClick = (e) => {
