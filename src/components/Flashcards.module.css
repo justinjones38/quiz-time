@@ -52,3 +52,19 @@
 .quizBtn:hover {
   cursor: pointer;
 }
+
+.arrowNext {
+  background-color: var(--arrow-btn-bg-next-color);
+}
+
+.arrowNext:disabled {
+  background-color: var(--arrow-btn-bg-next-disabled-color);
+}
+
+.arrowPrev {
+  background-color: var(--arrow-btn-bg-prev-color);
+}
+
+.arrowPrev:disabled {
+  background-color: var(--arrow-btn-bg-prev-disabled-color);
+}

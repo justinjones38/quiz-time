@@ -42,20 +42,23 @@ export default function Flashcards({ quizData }) {
       </div>
       <div className={styles.btnContainer}>
         <button
-          className={styles.quizBtn}
+          className={`${styles["quizBtn"]} ${styles["arrowPrev"]} `}
           disabled={cardNumber === 0}
           onClick={() => updateQuestion(false)}
         >
           <FaArrowLeft />
         </button>
         <button
-          className={styles.quizBtn}
+          className={`${styles["quizBtn"]} ${styles["arrowNext"]} `}
           disabled={cardNumber + 1 === quizData.length}
           onClick={() => updateQuestion(true)}
         >
           <FaArrowRight />
         </button>
       </div>
+        <div className={styles.settingBtnContainer}>
+          
+        </div>
     </div>
   );
 }

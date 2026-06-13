@@ -32,6 +32,12 @@ CSS VARIABLES
   --button-bg-color: #f6f6f9;
   --button-bg-disabled-color: #f6f6f975;
   --button-text-color: #242424;
+  --arrow-btn-bg-prev-color: #fecdcd;
+  --arrow-btn-bg-prev-disabled-color: #fecdcd64;
+
+  --arrow-btn-bg-next-color: #c5ecd0;
+  --arrow-btn-bg-next-disabled-color: #c5ecd064;
+
 
   /* Reusable Properties */
   --border-radius: 10px;
