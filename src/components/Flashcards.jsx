@@ -29,6 +29,7 @@ export default function Flashcards({ quizData, setQuizData }) {
   }
 
   const shuffle = () => {
+    resetCardDeck();
     setQuizData((prev) => shuffleArr(prev));
   }
 
