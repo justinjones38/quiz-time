@@ -42,6 +42,9 @@ export default function Flashcards({ quizData, setQuizData }) {
 
   return (
     <div className={styles.container}>
+      <p className={styles.description}>
+        Test your trivial skills with fun, thought-provoking, random questions
+      </p>
       <p className={styles.cardNumber}>
         Card {cardNumber + 1} of {quizData.length}
       </p>
