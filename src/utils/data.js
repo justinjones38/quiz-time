@@ -28,7 +28,7 @@ export const data = {
     {
       text: "Society and Culture",
       camelCase: "societyAndCulture",
-      apiName: "societyAndCulture",
+      apiName: "society_and_culture",
     },
     {
       text: "Science",

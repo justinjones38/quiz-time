@@ -2,20 +2,30 @@ import styles from "./SetupForm.module.css";
 import { data } from "../../utils/data";
 import SetupRadioQuestion from "./SetupRadioQuestion";
 import SetupChecklistQuestion from "./SetupChecklistQuestion";
-import PrimaryBtn from "../Buttons/PrimaryBtn";
-import { useOutletContext } from "react-router";
+import PrimaryBtn from "../buttons/PrimaryBtn";
+import { useNavigate, useOutletContext } from "react-router";
+import { useState } from "react";
 
 export default function SetupForm({}) {
   const { setupAnswers } = useOutletContext();
-  const isBtnDisabled =
-    (!setupAnswers.quizType && !setupAnswers.categories.length > 0) ||
-    !setupAnswers.difficulties.length > 0;
-  console.log(isBtnDisabled);
+  const navigate = useNavigate();
+  console.log(setupAnswers);
+  const isTextQuestions = setupAnswers.quizType === "textBased";
+  console.log(isTextQuestions);
+  const isBtnDisabled = !setupAnswers.quizType;
+
+  const handleBtnClick = (e) => {
+    e.preventDefault();
+    navigate("/quiz");
+  };
   return (
     <form className={styles.form}>
       <fieldset>
         <legend className={styles.questionTitle}>
-          What type of quiz do you want? <span>(Please select at least 1)</span>
+          What type of quiz do you want?{" "}
+          <span className={styles.required}>
+            (Question Required: Please select at least 1)
+          </span>
         </legend>
         <div className={styles.question}>
           {data.quizType.map((item) => (
@@ -24,39 +34,45 @@ export default function SetupForm({}) {
         </div>
       </fieldset>
 
-      <fieldset>
-        <legend className={styles.questionTitle}>
-          What categories of questions do you want for the quiz?{" "}
-          <span>(Please select at least 1)</span>
-        </legend>
-        <div className={styles.question}>
-          {data.categories.map((item) => (
-            <SetupChecklistQuestion
-              key={item.text}
-              item={item}
-              name="categories"
-            />
-          ))}
-        </div>
-      </fieldset>
+      {isTextQuestions ? (
+        <>
+          <fieldset>
+            <legend className={styles.questionTitle}>
+              What categories of questions do you want for the quiz?{" "}
+              <span>(Please select at least 1)</span>
+            </legend>
+            <div className={styles.question}>
+              {data.categories.map((item) => (
+                <SetupChecklistQuestion
+                  key={item.text}
+                  item={item}
+                  name="categories"
+                />
+              ))}
+            </div>
+          </fieldset>
 
-      <fieldset>
-        <legend className={styles.questionTitle}>
-          What level of difficulty do you want from the quiz?{" "}
-          <span>(Please select at least 1)</span>
-        </legend>
-        <div className={styles.question}>
-          {data.difficulties.map((item) => (
-            <SetupChecklistQuestion
-              key={item.text}
-              item={item}
-              name="difficulties"
-            />
-          ))}
-        </div>
-      </fieldset>
+          <fieldset>
+            <legend className={styles.questionTitle}>
+              What level of difficulty do you want from the quiz?{" "}
+              <span>(Please select at least 1)</span>
+            </legend>
+            <div className={styles.question}>
+              {data.difficulties.map((item) => (
+                <SetupChecklistQuestion
+                  key={item.text}
+                  item={item}
+                  name="difficulties"
+                />
+              ))}
+            </div>
+          </fieldset>
+        </>
+      ) : null}
       <div className={styles.btnContainer}>
-        <PrimaryBtn disabled={isBtnDisabled}>Next</PrimaryBtn>
+        <PrimaryBtn onClick={handleBtnClick} disabled={isBtnDisabled}>
+          Next
+        </PrimaryBtn>
       </div>
     </form>
   );

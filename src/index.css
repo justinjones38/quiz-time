@@ -18,6 +18,9 @@ CSS VARIABLES
   /* Background Colors */
   --body-bg-color: #23295cee;
   --flashcard-bg-color: #fcfcfc;
+  --flashcard-bg-easy-color: #c5ecd0;
+  --flashcard-bg-medium-color: #f8e1c3;
+  --flashcard-bg-hard-color: #fecdcd;
   --selected-bg-color: #7a85eaee;
   --selected-bg-hover-color: #7a85ea74;
 
@@ -26,13 +29,13 @@ CSS VARIABLES
   --flashcard-text-color: #242424;
 
   /* Button Colors */
-  --button-bg-color: #ababfec5;
-  --button-bg-disabled-color: #ababfe6b;
-  --button-text-color: #fcfcfc;
+  --button-bg-color: #f6f6f9;
+  --button-bg-disabled-color: #f6f6f975;
+  --button-text-color: #242424;
 
   /* Reusable Properties */
   --border-radius: 10px;
-  --flashcard-border: 1px solid #1a1a1a6a;
+  --input-border-color: #fcfcfc;
 }
 
 /* ===============
@@ -76,5 +79,4 @@ h2 {
   font-size: 1.5rem;
   text-align: center;
   font-weight: 500;
-  color: var(--flashcard-text-color);
 }

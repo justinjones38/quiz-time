@@ -1,6 +1,6 @@
 .quizType {
   padding: 0.5em;
-  border: 1px solid #000;
+  border: 1px solid var(--input-border-color);
   border-radius: var(--border-radius);
   transition: 0.3s background-color;
 }

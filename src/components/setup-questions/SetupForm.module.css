@@ -17,6 +17,10 @@
   font-weight: 200;
 }
 
+.questionTitle > .required {
+  font-weight: 700;
+}
+
 .btnContainer {
   display: flex;
   justify-content: center;
