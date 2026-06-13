@@ -33,19 +33,17 @@ CSS VARIABLES
   --button-bg-color: #f6f6f9;
   --button-bg-disabled-color: #f6f6f975;
   --button-bg-hover-color: #e1e1f5;
-  --reset-btn-background: #6B1919;
+  --reset-btn-background: #6b1919;
   --reset-btn-hover-background: #c44444;
   --button-text-color: #242424;
   --setting-btn-background: #242424;
   --setting-btn-background-hover: #575656;
   --setting-btn-color: #fcfcfc;
 
-
   /* Reusable Properties */
   --border-radius: 10px;
   --input-border-color: #fcfcfc;
 }
-
 
 /* ===============
 GENERAL LAYOUT
@@ -58,7 +56,8 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   cursor: pointer;
 }
 

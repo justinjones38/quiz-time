@@ -1,14 +1,13 @@
-import fish from "../assets/fish.jpeg"
-import mouse from "../assets/mouse.jpeg"
-import orca from "../assets/orca.jpeg"
-import beagle from "../assets/beagle.jpeg"
-import elephant from "../assets/elephant.jpeg"
+import fish from "../assets/fish.jpeg";
+import mouse from "../assets/mouse.jpeg";
+import orca from "../assets/orca.jpeg";
+import beagle from "../assets/beagle.jpeg";
+import elephant from "../assets/elephant.jpeg";
 import goldenRetriever from "../assets/golden_retriever.jpeg";
-import labrador from "../assets/labrador.jpeg"
-import rabbit from "../assets/rabbit.jpeg"
-import rottweiler from "../assets/rottweiler.jpeg"
-import lion from "../assets/lion.jpeg"
-
+import labrador from "../assets/labrador.jpeg";
+import rabbit from "../assets/rabbit.jpeg";
+import rottweiler from "../assets/rottweiler.jpeg";
+import lion from "../assets/lion.jpeg";
 
 export const data = {
   quizType: [
@@ -82,91 +81,95 @@ export const data = {
   ],
 };
 
-
-export const imageQuestions = [{
-  category: "science",
-  correctAnswer: "fish",
-  difficulty: "easy",
-  id: "userAdded1",
-  isNiche: false,
-  question: {text: "What animal is this"},
-  img: fish
-}, {
-  category: "science",
-  correctAnswer: "orca",
-  difficulty: "hard",
-  id: "userAdded2",
-  isNiche: false,
-  question: {text: "What animal is this"},
-  img: orca
-}, {
-  category: "science",
-  correctAnswer: "mouse",
-  difficulty: "easy",
-  id: "userAdded3",
-  isNiche: false,
-  question: {text: "What animal is this"},
-  img: mouse
-}, {
-  category: "science",
-  correctAnswer: "beagle",
-  difficulty: "medium",
-  id: "userAdded4",
-  isNiche: false,
-  question: {text: "What breed dog is this?"},
-  img: beagle
-}, {
-  category: "science",
-  correctAnswer: "elephant",
-  difficulty: "easy",
-  id: "userAdded5",
-  isNiche: false,
-  question: {text: "What animal is this"},
-  img: elephant
-}, {
-  category: "science",
-  correctAnswer: "lion",
-  difficulty: "easy",
-  id: "userAdded6",
-  isNiche: false,
-  question: {text: "What animal is this"},
-  img: lion
-}, {
-  category: "science",
-  correctAnswer: "rottweiler",
-  difficulty: "medium",
-  id: "userAdded7",
-  isNiche: false,
-  question: {text: "What breed dog is this?"},
-  img: rottweiler
-}, {
-  category: "science",
-  correctAnswer: "golden retriever",
-  difficulty: "medium",
-  id: "userAdded8",
-  isNiche: false,
-  question: {text: "What breed dog is this?"},
-  img: goldenRetriever
-}, {
-  category: "science",
-  correctAnswer: "labrador",
-  difficulty: "hard",
-  id: "userAdded9",
-  isNiche: false,
-  question: {text: "What breed dog is this?"},
-  img: labrador
-}, {
-  category: "science",
-  correctAnswer: "rabbit",
-  difficulty: "easy",
-  id: "userAdded10",
-  isNiche: false,
-  question: {text: "What animal is this"},
-  img: rabbit
-}]
-
-
-
-
-
-
+export const imageQuestions = [
+  {
+    category: "science",
+    correctAnswer: "fish",
+    difficulty: "easy",
+    id: "userAdded1",
+    isNiche: false,
+    question: { text: "What animal is this" },
+    img: fish,
+  },
+  {
+    category: "science",
+    correctAnswer: "orca",
+    difficulty: "hard",
+    id: "userAdded2",
+    isNiche: false,
+    question: { text: "What animal is this" },
+    img: orca,
+  },
+  {
+    category: "science",
+    correctAnswer: "mouse",
+    difficulty: "easy",
+    id: "userAdded3",
+    isNiche: false,
+    question: { text: "What animal is this" },
+    img: mouse,
+  },
+  {
+    category: "science",
+    correctAnswer: "beagle",
+    difficulty: "medium",
+    id: "userAdded4",
+    isNiche: false,
+    question: { text: "What breed dog is this?" },
+    img: beagle,
+  },
+  {
+    category: "science",
+    correctAnswer: "elephant",
+    difficulty: "easy",
+    id: "userAdded5",
+    isNiche: false,
+    question: { text: "What animal is this" },
+    img: elephant,
+  },
+  {
+    category: "science",
+    correctAnswer: "lion",
+    difficulty: "easy",
+    id: "userAdded6",
+    isNiche: false,
+    question: { text: "What animal is this" },
+    img: lion,
+  },
+  {
+    category: "science",
+    correctAnswer: "rottweiler",
+    difficulty: "medium",
+    id: "userAdded7",
+    isNiche: false,
+    question: { text: "What breed dog is this?" },
+    img: rottweiler,
+  },
+  {
+    category: "science",
+    correctAnswer: "golden retriever",
+    difficulty: "medium",
+    id: "userAdded8",
+    isNiche: false,
+    question: { text: "What breed dog is this?" },
+    img: goldenRetriever,
+  },
+  {
+    category: "science",
+    correctAnswer: "labrador",
+    difficulty: "hard",
+    id: "userAdded9",
+    isNiche: false,
+    question: { text: "What breed dog is this?" },
+    img: labrador,
+  },
+  {
+    category: "science",
+    correctAnswer: "rabbit",
+    difficulty: "easy",
+    id: "userAdded10",
+    isNiche: false,
+    question: { text: "What animal is this" },
+    img: rabbit,
+  },
+];

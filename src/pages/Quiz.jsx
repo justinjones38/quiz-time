@@ -25,7 +25,7 @@ export default function Quiz() {
     }
   };
   useEffect(() => {
-    if(setupAnswers.quizType === "imageBased") {
+    if (setupAnswers.quizType === "imageBased") {
       setQuizData(imageQuestions);
       return;
     }
@@ -34,7 +34,7 @@ export default function Quiz() {
 
   const shuffleCards = () => {
     return;
-  }
+  };
   return (
     <div className={styles.container}>
       {error ? <h2>Error: Cannot fetch flashcards</h2> : null}

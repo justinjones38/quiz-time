@@ -19,7 +19,8 @@
   font-size: 1rem;
 }
 
-.resetBtn:focus, .resetBtn:hover {
+.resetBtn:focus,
+.resetBtn:hover {
   background-color: var(--reset-btn-hover-background);
 }
 

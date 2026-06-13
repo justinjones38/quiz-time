@@ -9,10 +9,17 @@ export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
 
-  if(quizData.length === 0) {
-    return <Navigate to="/" state={{message: "Try different settings. Cannot find any flashcards"}} />
+  if (quizData.length === 0) {
+    return (
+      <Navigate
+        to="/"
+        state={{
+          message: "Try different settings. Cannot find any flashcards",
+        }}
+      />
+    );
   }
-  
+
   const updateQuestion = (isNextBtnClicked) => {
     if (isNextBtnClicked) {
       setCardNumber((prev) => prev + 1);
@@ -26,12 +33,12 @@ export default function Flashcards({ quizData, setQuizData }) {
   const resetCardDeck = () => {
     setCardNumber(0);
     setIsQuestionShown(true);
-  }
+  };
 
   const shuffle = () => {
     resetCardDeck();
     setQuizData((prev) => shuffleArr(prev));
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -46,9 +53,13 @@ export default function Flashcards({ quizData, setQuizData }) {
           <div className={styles.frontCard}>
             <p className={styles.question}>
               {quizData[cardNumber].question.text}
-              {quizData[cardNumber].img ? 
-                <img src={quizData[cardNumber].img} alt="image of answer" className={styles.img} /> 
-                : null}
+              {quizData[cardNumber].img ? (
+                <img
+                  src={quizData[cardNumber].img}
+                  alt="image of answer"
+                  className={styles.img}
+                />
+              ) : null}
             </p>
           </div>
         ) : (
@@ -75,13 +86,22 @@ export default function Flashcards({ quizData, setQuizData }) {
           <FaArrowRight />
         </button>
       </div>
-        <div className={styles.settingBtnContainer}>
-          <button className={styles.settingBtn} onClick={shuffle}>Shuffle Cards</button>
-          {cardNumber > 0 ? <button onClick={resetCardDeck} className={styles.settingBtn}> Reset Card Deck</button> : null}
-        </div>
-        <div className={styles.linkContainer}>
-            <Link to="/" className={styles.linkBtn}>Return Home</Link>
-        </div>
+      <div className={styles.settingBtnContainer}>
+        <button className={styles.settingBtn} onClick={shuffle}>
+          Shuffle Cards
+        </button>
+        {cardNumber > 0 ? (
+          <button onClick={resetCardDeck} className={styles.settingBtn}>
+            {" "}
+            Reset Card Deck
+          </button>
+        ) : null}
+      </div>
+      <div className={styles.linkContainer}>
+        <Link to="/" className={styles.linkBtn}>
+          Return Home
+        </Link>
+      </div>
     </div>
   );
 }

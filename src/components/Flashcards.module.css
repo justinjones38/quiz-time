@@ -36,7 +36,8 @@
   background-color: var(--flashcard-bg-hard-color);
 }
 
-.question, .answer {
+.question,
+.answer {
   text-align: center;
 }
 
@@ -90,7 +91,8 @@
   border-radius: var(--border-radius);
 }
 
-.settingBtn:hover, .settingBtn:focus {
+.settingBtn:hover,
+.settingBtn:focus {
   background-color: var(--setting-btn-background-hover);
 }
 
@@ -106,7 +108,8 @@
   transition: 0.3s border-box;
 }
 
-.linkBtn:hover, .linkBtn:focus {
+.linkBtn:hover,
+.linkBtn:focus {
   border-bottom: 3px solid var(--input-border-color);
 }
 

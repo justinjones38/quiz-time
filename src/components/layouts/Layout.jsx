@@ -32,18 +32,23 @@ export default function Layout() {
 
   const resetSettings = () => {
     setSetupAnswers({
-    quizType: "",
-    categories: [],
-    difficulties: [],
-  })
-  }
+      quizType: "",
+      categories: [],
+      difficulties: [],
+    });
+  };
 
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.title}>Quiz Time</h1>
       <div className={styles.bodyContainer}>
         <Outlet
-          context={{ setupAnswers, updateRadioAnswers, updateCheckListAnswers, resetSettings }}
+          context={{
+            setupAnswers,
+            updateRadioAnswers,
+            updateCheckListAnswers,
+            resetSettings,
+          }}
         />
       </div>
     </div>
