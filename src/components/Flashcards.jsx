@@ -4,9 +4,14 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Link, Navigate } from "react-router";
 
-export default function Flashcards({ quizData }) {
+export default function Flashcards({ quizData, shuffleCards }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
+
+  if(quizData.length === 0) {
+    return <Navigate to="/" state={{message: "Try different settings. Cannot find any flashcards"}} />
+  }
+  
   const updateQuestion = (isNextBtnClicked) => {
     if (isNextBtnClicked) {
       setCardNumber((prev) => prev + 1);
@@ -16,9 +21,10 @@ export default function Flashcards({ quizData }) {
     setCardNumber((prev) => prev - 1);
     setIsQuestionShown(true);
   };
-  console.log(quizData.length);
-  if(quizData.length === 0) {
-    return <Navigate to="/" state={{message: "Try different settings. Cannot find any flashcards"}} />
+
+  const resetCardDeck = () => {
+    setCardNumber(0);
+    setIsQuestionShown(true);
   }
 
   return (
@@ -34,6 +40,9 @@ export default function Flashcards({ quizData }) {
           <div className={styles.frontCard}>
             <p className={styles.question}>
               {quizData[cardNumber].question.text}
+              {quizData[cardNumber].img ? 
+                <img src={quizData[cardNumber].img} alt="image of answer" className={styles.img} /> 
+                : null}
             </p>
           </div>
         ) : (
@@ -61,8 +70,8 @@ export default function Flashcards({ quizData }) {
         </button>
       </div>
         <div className={styles.settingBtnContainer}>
-          <button className={styles.settingBtn}>Shuffle Cards</button>
-          {cardNumber > 0 ? <button onClick={() => setCardNumber(0)} className={styles.settingBtn}> Reset Card Deck</button> : null}
+          <button className={styles.settingBtn} onClick={shuffleCards}>Shuffle Cards</button>
+          {cardNumber > 0 ? <button onClick={resetCardDeck} className={styles.settingBtn}> Reset Card Deck</button> : null}
         </div>
         <div className={styles.linkContainer}>
             <Link to="/" className={styles.linkBtn}>Return Home</Link>

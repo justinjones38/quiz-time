@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router";
 import { fetchQuizQuestions } from "../api/api";
 import { useEffect, useState } from "react";
 import Flashcards from "../components/Flashcards";
+import { imageQuestions } from "../utils/data";
 
 export default function Quiz() {
   const { setupAnswers } = useOutletContext();
@@ -11,7 +12,6 @@ export default function Quiz() {
   const [error, setError] = useState(false);
   const fetchData = async () => {
     setLoading(true);
-    console.log(setupAnswers);
     try {
       const fetchResults = await fetchQuizQuestions(
         setupAnswers.categories,
@@ -25,15 +25,22 @@ export default function Quiz() {
     }
   };
   useEffect(() => {
+    if(setupAnswers.quizType === "imageBased") {
+      setQuizData(imageQuestions);
+      return;
+    }
     fetchData();
   }, []);
-  console.log(quizData);
+
+  const shuffleCards = () => {
+    return;
+  }
   return (
     <div className={styles.container}>
       {error ? <h2>Error: Cannot fetch flashcards</h2> : null}
       {loading ? <h2>Loading ...</h2> : null}
       {!error && !loading && quizData ? (
-        <Flashcards quizData={quizData} />
+        <Flashcards quizData={quizData} shuffleCards={shuffleCards} />
       ) : null}
     </div>
   );
