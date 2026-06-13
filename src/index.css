@@ -35,8 +35,11 @@ CSS VARIABLES
   --button-bg-hover-color: #e1e1f5;
   --reset-btn-background: #6B1919;
   --reset-btn-hover-background: #c44444;
-
   --button-text-color: #242424;
+  --setting-btn-background: #242424;
+  --setting-btn-background-hover: #575656;
+  --setting-btn-color: #fcfcfc;
+
 
   /* Reusable Properties */
   --border-radius: 10px;

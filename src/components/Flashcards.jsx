@@ -61,9 +61,11 @@ export default function Flashcards({ quizData }) {
         </button>
       </div>
         <div className={styles.settingBtnContainer}>
-          <button>Shuffle Cards</button>
-          <Link to="/">Return to Setup Menu</Link>
-          {cardNumber > 0 ? <button onClick={() => setCardNumber(0)}> Reset Card Deck</button> : null}
+          <button className={styles.settingBtn}>Shuffle Cards</button>
+          {cardNumber > 0 ? <button onClick={() => setCardNumber(0)} className={styles.settingBtn}> Reset Card Deck</button> : null}
+        </div>
+        <div className={styles.linkContainer}>
+            <Link to="/" className={styles.linkBtn}>Return Home</Link>
         </div>
     </div>
   );

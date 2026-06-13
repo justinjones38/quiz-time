@@ -41,6 +41,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.25em;
 }
 
 .quizBtn {
@@ -51,4 +52,55 @@
 .quizBtn:focus,
 .quizBtn:hover {
   cursor: pointer;
+}
+
+.settingBtnContainer {
+  width: 98%;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-bottom: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.settingBtn {
+  background-color: var(--setting-btn-background);
+  color: var(--setting-btn-color);
+  transition: 0.3s background-color;
+  padding: 0.75em 1.25em;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.settingBtn:hover, .settingBtn:focus {
+  background-color: var(--setting-btn-background-hover);
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.linkBtn {
+  text-align: center;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  transition: 0.3s border-box;
+}
+
+.linkBtn:hover, .linkBtn:focus {
+  border-bottom: 3px solid var(--input-border-color);
+}
+
+@media (min-width: 600px) {
+  .settingBtnContainer {
+    flex-direction: row;
+    align-items: unset;
+  }
 }
