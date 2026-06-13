@@ -32,7 +32,6 @@ export default function Layout() {
     }
   };
 
-
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.title}>Quiz Time</h1>

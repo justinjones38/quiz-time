@@ -36,7 +36,7 @@
   background-color: var(--flashcard-bg-hard-color);
 }
 
-.btnContainer  {
+.btnContainer {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -48,6 +48,7 @@
   min-width: 70px;
 }
 
-.quizBtn:focus, .quizBtn:hover {
+.quizBtn:focus,
+.quizBtn:hover {
   cursor: pointer;
 }

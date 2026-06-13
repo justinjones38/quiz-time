@@ -11,7 +11,7 @@ export default function Quiz() {
   const [error, setError] = useState(false);
   const fetchData = async () => {
     setLoading(true);
-    console.log(setupAnswers)
+    console.log(setupAnswers);
     try {
       const fetchResults = await fetchQuizQuestions(
         setupAnswers.categories,
@@ -27,12 +27,14 @@ export default function Quiz() {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(quizData)
+  console.log(quizData);
   return (
     <div className={styles.container}>
       {error ? <h2>Error: Cannot fetch flashcards</h2> : null}
       {loading ? <h2>Loading ...</h2> : null}
-      {!error && !loading && quizData ? <Flashcards quizData={quizData} />  : null}
+      {!error && !loading && quizData ? (
+        <Flashcards quizData={quizData} />
+      ) : null}
     </div>
   );
 }
