@@ -11,6 +11,7 @@ export default function Quiz() {
   const [error, setError] = useState(false);
   const fetchData = async () => {
     setLoading(true);
+    console.log(setupAnswers)
     try {
       const fetchResults = await fetchQuizQuestions(
         setupAnswers.categories,

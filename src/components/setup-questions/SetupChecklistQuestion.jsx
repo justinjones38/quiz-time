@@ -14,8 +14,8 @@ export default function SetupChecklistQuestion({ item, name }) {
         id={item.camelCase}
         className={styles.inputBtn}
         name={name}
-        value={item.camelCase}
-        checked={setupAnswers[name].includes(item.camelCase)}
+        value={item.apiName}
+        checked={setupAnswers[name].includes(item.apiName)}
         onChange={(e) => updateCheckListAnswers(e.target.name, e.target.value)}
       />
       {item.text}
