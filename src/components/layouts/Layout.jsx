@@ -17,8 +17,6 @@ export default function Layout() {
   };
 
   const updateCheckListAnswers = (newName, newVal) => {
-    console.log(newName, newVal);
-    console.log(setupAnswers);
     if (setupAnswers[newName].includes(newVal)) {
       setSetupAnswers((prev) => ({
         ...prev,
@@ -32,12 +30,25 @@ export default function Layout() {
     }
   };
 
+  const resetSettings = () => {
+    setSetupAnswers({
+      quizType: "",
+      categories: [],
+      difficulties: [],
+    });
+  };
+
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.title}>Quiz Time</h1>
       <div className={styles.bodyContainer}>
         <Outlet
-          context={{ setupAnswers, updateRadioAnswers, updateCheckListAnswers }}
+          context={{
+            setupAnswers,
+            updateRadioAnswers,
+            updateCheckListAnswers,
+            resetSettings,
+          }}
         />
       </div>
     </div>

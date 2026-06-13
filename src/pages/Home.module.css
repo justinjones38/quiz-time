@@ -4,3 +4,8 @@
   margin-bottom: 1em;
   text-align: center;
 }
+
+.alert {
+  text-align: center;
+  color: var(--alert-text-color);
+}

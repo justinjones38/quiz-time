@@ -1,5 +1,4 @@
 export const fetchQuizQuestions = async (categories = [], difficulty = []) => {
-  console.log(categories, difficulty);
   const difficultyParams =
     difficulty.length > 0 ? `&difficulties=${[...difficulty].join(",")}` : "";
 
