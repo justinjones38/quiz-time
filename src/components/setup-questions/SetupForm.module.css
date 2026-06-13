@@ -15,6 +15,12 @@
   border: none;
   padding: 0.75em 1.5em;
   border-radius: var(--border-radius);
+  transition: 0.3s background-color;
+  font-size: 1rem;
+}
+
+.resetBtn:focus, .resetBtn:hover {
+  background-color: var(--reset-btn-hover-background);
 }
 
 .question {

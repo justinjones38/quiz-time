@@ -68,7 +68,7 @@ export default function SetupForm({}) {
           <fieldset>
             <legend className={styles.questionTitle}>
               What level of difficulty do you want from the quiz?{" "}
-              <span>(Please select at least 1)</span>
+              <span>(If blank, all will be selected)</span>
             </legend>
             <div className={styles.question}>
               {data.difficulties.map((item) => (

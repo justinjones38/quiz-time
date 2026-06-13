@@ -5,6 +5,11 @@
   border-radius: var(--border-radius);
   border: none;
   font-size: 1rem;
+  transition: 0.3s background-color;
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--button-bg-hover-color);
 }
 
 .btn:disabled {

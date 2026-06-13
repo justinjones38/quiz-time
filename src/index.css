@@ -32,7 +32,9 @@ CSS VARIABLES
   /* Button Colors */
   --button-bg-color: #f6f6f9;
   --button-bg-disabled-color: #f6f6f975;
+  --button-bg-hover-color: #e1e1f5;
   --reset-btn-background: #6B1919;
+  --reset-btn-hover-background: #c44444;
 
   --button-text-color: #242424;
 
@@ -51,6 +53,10 @@ body {
   color: var(--primary-text-color);
   line-height: 1.6;
   font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+button:hover, button:focus {
+  cursor: pointer;
 }
 
 button,
