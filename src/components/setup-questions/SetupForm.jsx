@@ -7,7 +7,7 @@ import { useNavigate, useOutletContext } from "react-router";
 import { useState } from "react";
 
 export default function SetupForm({}) {
-  const { setupAnswers } = useOutletContext();
+  const { setupAnswers, resetSettings } = useOutletContext();
   const navigate = useNavigate();
   console.log(setupAnswers);
   const isTextQuestions = setupAnswers.quizType === "textBased";
@@ -22,7 +22,17 @@ export default function SetupForm({}) {
 
   return (
     <form className={styles.form}>
-
+      {!isBtnDisabled ? 
+      <div className={styles.btnContainer}>
+          <button 
+            onClick={resetSettings}
+            className={styles.resetBtn}
+            >
+            Reset Settings
+            </button> 
+      </div>
+          
+          : null}
       <fieldset>
         <legend className={styles.questionTitle}>
           What type of quiz do you want?{" "}

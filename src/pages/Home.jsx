@@ -4,7 +4,6 @@ import SetupForm from "../components/setup-questions/SetupForm";
 
 export default function Home() {
   const location = useLocation();
-  console.log(location)
   return (
     <div className={styles.container}>
       <h2 className={styles.pageTitle}>Welcome to Quiz Time!</h2>

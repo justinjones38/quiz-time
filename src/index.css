@@ -32,12 +32,15 @@ CSS VARIABLES
   /* Button Colors */
   --button-bg-color: #f6f6f9;
   --button-bg-disabled-color: #f6f6f975;
+  --reset-btn-background: #6B1919;
+
   --button-text-color: #242424;
 
   /* Reusable Properties */
   --border-radius: 10px;
   --input-border-color: #fcfcfc;
 }
+
 
 /* ===============
 GENERAL LAYOUT
