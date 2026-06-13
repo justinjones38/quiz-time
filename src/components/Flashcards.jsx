@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Flashcards.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
+import { Link, Navigate } from "react-router";
 
 export default function Flashcards({ quizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
@@ -15,7 +16,10 @@ export default function Flashcards({ quizData }) {
     setCardNumber((prev) => prev - 1);
     setIsQuestionShown(true);
   };
-  console.log(quizData[cardNumber]);
+  console.log(quizData.length);
+  if(quizData.length === 0) {
+    return <Navigate to="/" state={{message: "Try different settings. Cannot find any flashcards"}} />
+  }
 
   return (
     <div className={styles.container}>
@@ -42,14 +46,14 @@ export default function Flashcards({ quizData }) {
       </div>
       <div className={styles.btnContainer}>
         <button
-          className={`${styles["quizBtn"]} ${styles["arrowPrev"]} `}
+          className={styles.quizBtn}
           disabled={cardNumber === 0}
           onClick={() => updateQuestion(false)}
         >
           <FaArrowLeft />
         </button>
         <button
-          className={`${styles["quizBtn"]} ${styles["arrowNext"]} `}
+          className={styles.quizBtn}
           disabled={cardNumber + 1 === quizData.length}
           onClick={() => updateQuestion(true)}
         >
@@ -57,7 +61,9 @@ export default function Flashcards({ quizData }) {
         </button>
       </div>
         <div className={styles.settingBtnContainer}>
-          
+          <button>Shuffle Cards</button>
+          <Link to="/">Return to Setup Menu</Link>
+          {cardNumber > 0 ? <button onClick={() => setCardNumber(0)}> Reset Card Deck</button> : null}
         </div>
     </div>
   );

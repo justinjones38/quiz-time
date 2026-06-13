@@ -18,8 +18,11 @@ export default function SetupForm({}) {
     e.preventDefault();
     navigate("/quiz");
   };
+
+
   return (
     <form className={styles.form}>
+
       <fieldset>
         <legend className={styles.questionTitle}>
           What type of quiz do you want?{" "}
@@ -39,7 +42,7 @@ export default function SetupForm({}) {
           <fieldset>
             <legend className={styles.questionTitle}>
               What categories of questions do you want for the quiz?{" "}
-              <span>(Please select at least 1)</span>
+              <span>(If blank, all will be selected)</span>
             </legend>
             <div className={styles.question}>
               {data.categories.map((item) => (
@@ -70,6 +73,7 @@ export default function SetupForm({}) {
         </>
       ) : null}
       <div className={styles.btnContainer}>
+
         <PrimaryBtn onClick={handleBtnClick} disabled={isBtnDisabled}>
           Next
         </PrimaryBtn>
