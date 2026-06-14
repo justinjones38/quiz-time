@@ -14,6 +14,6 @@ export const fetchQuizQuestions = async (categories = [], difficulty = []) => {
     const resJson = await res.json();
     return resJson;
   } catch (err) {
-    return err;
+    throw new Error();
   }
 };
