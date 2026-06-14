@@ -61,10 +61,6 @@ button:focus {
   cursor: pointer;
 }
 
-a {
-  text-decoration: none;
-}
-
 button,
 a {
   font-family: inherit;

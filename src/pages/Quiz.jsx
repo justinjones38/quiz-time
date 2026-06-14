@@ -35,9 +35,13 @@ export default function Quiz() {
     fetchData();
   }, []);
 
+  const shuffleCards = () => {
+    return;
+  };
   return (
     <div className={styles.container}>
-      {error ? <Error /> : null}
+      {error ? <h2>Error: Cannot fetch flashcards</h2> : null}
+      {loading ? <h2>Loading ...</h2> : null}
       {!error && !loading && quizData ? (
         <Flashcards quizData={quizData} setQuizData={setQuizData} />
       ) : null}
