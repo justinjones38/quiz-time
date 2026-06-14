@@ -4,7 +4,6 @@ export const fetchQuizQuestions = async (categories = [], difficulty = []) => {
 
   const categoryParams =
     categories.length > 0 ? `&categories=${[...categories].join(",")}` : "";
-  try {
     const res = await fetch(
       `https://the-trivia-api.com/v2/questions?contentFilter=family${categoryParams}${difficultyParams}`,
     );
@@ -13,7 +12,4 @@ export const fetchQuizQuestions = async (categories = [], difficulty = []) => {
     }
     const resJson = await res.json();
     return resJson;
-  } catch (err) {
-    return err;
-  }
 };

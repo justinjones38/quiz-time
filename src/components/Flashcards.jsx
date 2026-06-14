@@ -7,7 +7,7 @@ import { shuffleArr } from "../utils/helper";
 
 export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
-  const [cardNumber, setCardNumber] = useState(0);
+  const [cardNumber, setCardNumber] = useState(Math.floor(Math.random() * quizData.length));
 
   if (quizData.length === 0) {
     return (
@@ -22,11 +22,11 @@ export default function Flashcards({ quizData, setQuizData }) {
 
   const updateQuestion = (isNextBtnClicked) => {
     if (isNextBtnClicked) {
-      setCardNumber((prev) => prev + 1);
+      setCardNumber(Math.floor(Math.random() * quizData.length));
       setIsQuestionShown(true);
       return;
     }
-    setCardNumber((prev) => prev - 1);
+    setCardNumber(Math.floor(Math.random() * quizData.length));
     setIsQuestionShown(true);
   };
 
@@ -46,7 +46,7 @@ export default function Flashcards({ quizData, setQuizData }) {
         Test your trivial skills with fun, thought-provoking, random questions
       </p>
       <p className={styles.cardNumber}>
-        Card {cardNumber + 1} of {quizData.length}
+        Total Cards: {quizData.length}
       </p>
       <div
         className={`${styles["flashcard"]} ${styles[quizData[cardNumber].difficulty]} `}
@@ -76,14 +76,12 @@ export default function Flashcards({ quizData, setQuizData }) {
       <div className={styles.btnContainer}>
         <button
           className={styles.quizBtn}
-          disabled={cardNumber === 0}
           onClick={() => updateQuestion(false)}
         >
           <FaArrowLeft />
         </button>
         <button
           className={styles.quizBtn}
-          disabled={cardNumber + 1 === quizData.length}
           onClick={() => updateQuestion(true)}
         >
           <FaArrowRight />
@@ -93,12 +91,10 @@ export default function Flashcards({ quizData, setQuizData }) {
         <button className={styles.settingBtn} onClick={shuffle}>
           Shuffle Cards
         </button>
-        {cardNumber > 0 ? (
           <button onClick={resetCardDeck} className={styles.settingBtn}>
             {" "}
             Reset Card Deck
           </button>
-        ) : null}
       </div>
       <div className={styles.linkContainer}>
         <Link to="/" className={styles.linkBtn}>
