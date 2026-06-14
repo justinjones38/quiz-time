@@ -4,6 +4,8 @@ import { fetchQuizQuestions } from "../api/api";
 import { useEffect, useState } from "react";
 import Flashcards from "../components/Flashcards";
 import { imageQuestions } from "../utils/data";
+import Error from "../components/Error";
+import { shuffleArr } from "../utils/helper";
 
 export default function Quiz() {
   const { setupAnswers } = useOutletContext();
@@ -17,7 +19,8 @@ export default function Quiz() {
         setupAnswers.categories,
         setupAnswers.difficulties,
       );
-      setQuizData(fetchResults);
+      // This receives the array and shuffles it
+      setQuizData(shuffleArr(fetchResults));
     } catch (err) {
       setError(true);
     } finally {
