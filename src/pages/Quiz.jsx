@@ -4,7 +4,6 @@ import { fetchQuizQuestions } from "../api/api";
 import { useEffect, useState } from "react";
 import Flashcards from "../components/Flashcards";
 import { imageQuestions } from "../utils/data";
-import Error from "../components/Error";
 
 export default function Quiz() {
   const { setupAnswers } = useOutletContext();
@@ -33,9 +32,13 @@ export default function Quiz() {
     fetchData();
   }, []);
 
+  const shuffleCards = () => {
+    return;
+  };
   return (
     <div className={styles.container}>
-      {error ? <Error /> : null}
+      {error ? <h2>Error: Cannot fetch flashcards</h2> : null}
+      {loading ? <h2>Loading ...</h2> : null}
       {!error && !loading && quizData ? (
         <Flashcards quizData={quizData} setQuizData={setQuizData} />
       ) : null}
