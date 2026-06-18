@@ -45,9 +45,9 @@
 .img {
   display: block;
   margin: 0 auto;
-  width: 90%;
-  max-width: 350px;
+  width: 275px;
   object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 .btnContainer {
