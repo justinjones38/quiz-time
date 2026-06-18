@@ -71,6 +71,7 @@
 .quizBtn:focus,
 .quizBtn:hover {
   cursor: pointer;
+  background-color: var(--btn-bg-color-hover);
 }
 
 .quizBtn:disabled {

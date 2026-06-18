@@ -10,9 +10,9 @@
 
 .btn:hover,
 .btn:focus {
-  background-color: var(--button-bg-hover-color);
+  background-color: var(--btn-bg-color-hover);
 }
 
 .btn:disabled {
-  background-color: var(--button-bg-disabled-color);
+  background-color: var(--btn-bg-color-disabled);
 }
