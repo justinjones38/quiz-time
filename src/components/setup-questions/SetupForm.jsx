@@ -19,13 +19,6 @@ export default function SetupForm({}) {
 
   return (
     <form className={styles.form}>
-      {!isBtnDisabled ? (
-        <div className={styles.btnContainer}>
-          <button onClick={resetSettings} className={styles.resetBtn}>
-            Reset Settings
-          </button>
-        </div>
-      ) : null}
       <fieldset>
         <legend className={styles.questionTitle}>
           What type of quiz do you want?{" "}
@@ -80,6 +73,13 @@ export default function SetupForm({}) {
           Next
         </PrimaryBtn>
       </div>
+            {!isBtnDisabled ? (
+        <div className={styles.btnContainer}>
+          <button onClick={resetSettings} className={styles.resetBtn}>
+            Clear Answers
+          </button>
+        </div>
+      ) : null}
     </form>
   );
 }

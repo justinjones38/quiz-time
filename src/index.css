@@ -30,23 +30,20 @@ CSS VARIABLES
   --flashcard-bg-medium-color: #f8e1c3;
   --flashcard-bg-hard-color: #fecdcd;
   --selected-bg-color: #9d4edd;
-  --selected-bg-hover-color: #7a85ea74;
+  --selected-bg-hover-color: #7b2cbfff;
 
   /* Font Colors */
   --primary-text-color: #FCFCFC;
   --flashcard-text-color: #242424;
-  --alert-text-color: #f27575;
+  --alert-text-color: #F2B5B5;
 
   /* Button Colors */
-  --button-bg-color: #c77dff;
-  --button-bg-disabled-color: #f6f6f975;
-  --button-bg-hover-color: #e1e1f5;
+  --btn-bg-color: #7b2cbf;
+  --btn-bg-color-hover: #c77dffff;
+  --btn-bg-color-disabled: #7a2cbf5e;
+  --btn-color: #FFFFFF;
   --reset-btn-background: #6b1919;
   --reset-btn-hover-background: #c44444;
-  --button-text-color: #242424;
-  --setting-btn-background: #242424;
-  --setting-btn-background-hover: #575656;
-  --setting-btn-color: #fcfcfc;
 
   /* Reusable Properties */
   --border-radius: 10px;
@@ -98,4 +95,10 @@ h2 {
   font-size: 1.5rem;
   text-align: center;
   font-weight: 500;
+}
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 17px;
+  }
 }

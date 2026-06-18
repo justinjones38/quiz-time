@@ -61,11 +61,20 @@
 .quizBtn {
   font-size: 1.5rem;
   min-width: 70px;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  border-radius: 6px;
+  padding: 0.2em 0.75em;
+  border: none;
 }
 
 .quizBtn:focus,
 .quizBtn:hover {
   cursor: pointer;
+}
+
+.quizBtn:disabled {
+  background-color: var(--btn-bg-color-disabled);
 }
 
 .settingBtnContainer {
@@ -81,8 +90,8 @@
 }
 
 .settingBtn {
-  background-color: var(--setting-btn-background);
-  color: var(--setting-btn-color);
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
   transition: 0.3s background-color;
   padding: 0.75em 1.25em;
   text-decoration: none;
@@ -90,11 +99,12 @@
   border: none;
   font-size: 1rem;
   border-radius: var(--border-radius);
+  word-wrap: nowrap;
 }
 
 .settingBtn:hover,
 .settingBtn:focus {
-  background-color: var(--setting-btn-background-hover);
+  background-color: var(--btn-bg-color-hover);
 }
 
 .linkContainer {
