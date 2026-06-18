@@ -60,7 +60,7 @@ export default function Flashcards({ quizData, setQuizData }) {
               {quizData[cardNumber].img ? (
                 <img
                   src={quizData[cardNumber].img}
-                  alt="image of answer"
+                  alt="The answer to the question"
                   className={styles.img}
                 />
               ) : null}
