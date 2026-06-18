@@ -1,0 +1,7 @@
+.container {
+  margin-bottom: 0.75em;
+}
+
+.form {
+  display: flex;
+}

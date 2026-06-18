@@ -5,10 +5,12 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Link, Navigate } from "react-router";
 import { shuffleArr } from "../utils/helper";
 import PrimaryBtn from "./buttons/PrimaryBtn";
+import InputAnswer from "./InputAnswer";
 
 export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
+  console.log(quizData);
 
   const updateQuestion = (isNextBtnClicked) => {
     if (isNextBtnClicked) {
@@ -21,7 +23,8 @@ export default function Flashcards({ quizData, setQuizData }) {
   };
 
   useEffect(() => {
-    // Added keyboard events so users can use the arrow to change questions
+    // Added keyboard events so users can use the arrows on the screen to change questions
+    // and flip between question and answer
     const handleKeyEvents = (e) => {
       if(e.key === "ArrowUp" || e.key === "ArrowDown") {
         setIsQuestionShown(prev => !prev);
@@ -108,6 +111,7 @@ export default function Flashcards({ quizData, setQuizData }) {
           <FaArrowRight />
         </button>
       </div>
+      <InputAnswer correctAnswer={quizData[cardNumber].correctAnswer} cardNumber={cardNumber}  />
       <div className={styles.settingBtnContainer}>
         <PrimaryBtn onClick={handleShuffle}>
           Shuffle Cards
