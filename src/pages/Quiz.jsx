@@ -40,7 +40,7 @@ export default function Quiz() {
   };
   return (
     <div className={styles.container}>
-      {error ? <h2>Error: Cannot fetch flashcards</h2> : null}
+      {error ? <Error /> : null}
       {loading ? <h2>Loading ...</h2> : null}
       {!error && !loading && quizData ? (
         <Flashcards quizData={quizData} setQuizData={setQuizData} />
