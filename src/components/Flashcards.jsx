@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Flashcards.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
@@ -10,6 +10,34 @@ export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
 
+  const updateQuestion = (isNextBtnClicked) => {
+    if (isNextBtnClicked) {
+      setCardNumber((prev) => prev + 1);
+      setIsQuestionShown(true);
+      return;
+    }
+    setCardNumber((prev) => prev - 1);
+    setIsQuestionShown(true);
+  };
+
+  useEffect(() => {
+    // Added keyboard events so users can use the arrow to change questions
+    const handleKeyEvents = (e) => {
+      if(e.key === "ArrowUp" || e.key === "ArrowDown") {
+        setIsQuestionShown(prev => !prev);
+      } else if (e.key === "ArrowLeft" && cardNumber !== 0) {
+        updateQuestion(false)
+      } else if (e.key === "ArrowRight" && cardNumber < quizData.length - 1) {
+        updateQuestion(true);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyEvents);
+
+    return () => document.removeEventListener("keydown", handleKeyEvents);
+  })
+
+
   if (quizData.length === 0) {
     return (
       <Navigate
@@ -20,16 +48,6 @@ export default function Flashcards({ quizData, setQuizData }) {
       />
     );
   }
-
-  const updateQuestion = (isNextBtnClicked) => {
-    if (isNextBtnClicked) {
-      setCardNumber((prev) => prev + 1);
-      setIsQuestionShown(true);
-      return;
-    }
-    setCardNumber((prev) => prev - 1);
-    setIsQuestionShown(true);
-  };
 
   const resetCardDeck = () => {
     setCardNumber(0);
