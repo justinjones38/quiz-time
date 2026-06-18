@@ -6,7 +6,7 @@ export default function Home() {
   const location = useLocation();
   return (
     <div className={styles.container}>
-      <h2 className={styles.pageTitle}>Welcome to Quiz Time!</h2>
+      <h2 className={styles.pageTitle}>Welcome!</h2>
       {location.state?.message ? (
         <p className={styles.alert}>{location.state.message}</p>
       ) : null}

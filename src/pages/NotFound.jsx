@@ -4,7 +4,7 @@ import { Link, useOutletContext } from "react-router";
 export default function NotFound() {
   return (
     <div className={styles.container}>
-      <h2>Sorry, this page is not found. Please return to the home page</h2>
+      <h2 className={styles.title}>Sorry, this page is not found. Please return to the home page</h2>
       <Link to="/" className={styles.btn}>
         Home
       </Link>

@@ -1,8 +1,11 @@
-.mainContainer {
+.container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 1em;
+}
+
+.mainContent {
   width: 97%;
   margin: 0 auto;
   max-width: 1000px

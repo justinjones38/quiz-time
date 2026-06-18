@@ -40,7 +40,7 @@ CSS VARIABLES
   /* Button Colors */
   --btn-bg-color: #7b2cbf;
   --btn-bg-color-hover: #c77dffff;
-  --btn-bg-color-disabled: #7a2cbf5e;
+  --btn-bg-color-disabled: #2e2b30b2;
   --btn-color: #FFFFFF;
   --reset-btn-background: #6b1919;
   --reset-btn-hover-background: #c44444;
@@ -61,6 +61,10 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+button {
+  display: block;
+}
+
 button:hover,
 button:focus {
   cursor: pointer;
@@ -69,6 +73,10 @@ button:focus {
 button,
 a {
   font-family: inherit;
+}
+
+button:disabled {
+  cursor: initial;
 }
 
 img {
@@ -89,6 +97,8 @@ h1 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25em;
 }
 
 h2 {
@@ -96,6 +106,12 @@ h2 {
   text-align: center;
   font-weight: 500;
 }
+
+/* ===============
+MEDIA QUERIES
+================== */
+
+
 
 @media (min-width: 1000px) {
   html {

@@ -72,12 +72,13 @@ export default function SetupForm({}) {
         <PrimaryBtn onClick={handleBtnClick} disabled={isBtnDisabled}>
           Submit Answers
         </PrimaryBtn>
-      </div>
-            {!isBtnDisabled ? (
+        {!isBtnDisabled ? (
           <button onClick={resetSettings} className={styles.resetBtn}>
             Clear Answers
           </button>
       ) : null}
+      </div>
+
     </form>
   );
 }

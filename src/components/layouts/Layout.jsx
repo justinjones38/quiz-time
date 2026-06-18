@@ -39,9 +39,9 @@ export default function Layout() {
   };
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.container}>
       <h1 className={styles.title}>Quiz Time</h1>
-      <div className={styles.bodyContainer}>
+      <div className={styles.mainContent}>
         <Outlet
           context={{
             setupAnswers,
