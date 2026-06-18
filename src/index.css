@@ -13,24 +13,32 @@ RESET CSS
 /* ===============
 CSS VARIABLES
 ================== */
+/* --dark-amethyst: #10002bff;
+--dark-amethyst-2: #240046ff;
+--indigo-ink: #3c096cff;
+--indigo-velvet: #5a189aff;
+--royal-violet: #7b2cbfff;
+--lavender-purple: #9d4eddff;
+--mauve-magic: #c77dffff;
+--mauve: #e0aaffff; */
 
 :root {
   /* Background Colors */
-  --body-bg-color: #23295cee;
+  --body-bg-color: #10002b;
   --flashcard-bg-color: #fcfcfc;
   --flashcard-bg-easy-color: #c5ecd0;
   --flashcard-bg-medium-color: #f8e1c3;
   --flashcard-bg-hard-color: #fecdcd;
-  --selected-bg-color: #7a85eaee;
+  --selected-bg-color: #9d4edd;
   --selected-bg-hover-color: #7a85ea74;
 
   /* Font Colors */
-  --primary-text-color: #fcfcfc;
+  --primary-text-color: #FCFCFC;
   --flashcard-text-color: #242424;
   --alert-text-color: #f27575;
 
   /* Button Colors */
-  --button-bg-color: #f6f6f9;
+  --button-bg-color: #c77dff;
   --button-bg-disabled-color: #f6f6f975;
   --button-bg-hover-color: #e1e1f5;
   --reset-btn-background: #6b1919;
