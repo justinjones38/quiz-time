@@ -6,6 +6,13 @@ This web app: **insert description**
 
 Time spent: **X** hours spent in total
 
+## Not completed tasks (delete later)
+- [ ] implement flip method
+- [ ] use useReducer to update current/longest streak
+- [ ] implement mastered cards
+- [ ] added fallback question if images don't load
+- [ ] try to fix where reload returns to home screen
+
 ## Required Features
 
 The following **required** functionality is completed:

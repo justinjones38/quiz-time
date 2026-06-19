@@ -90,6 +90,8 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What animal is this" },
     img: fish,
+    altText: `an orange water-dwelling vertebrate animal, swimming in the ocean, breathe 
+              through gills and typically has fins.`
   },
   {
     category: "science",
@@ -99,6 +101,7 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What animal is this" },
     img: orca,
+    altText: `the largest member of the oceanic dolphin family, jumping out of a body of water.`
   },
   {
     category: "science",
@@ -108,6 +111,7 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What animal is this" },
     img: mouse,
+    altText: `a small rodent staring at the camera`
   },
   {
     category: "science",
@@ -117,6 +121,8 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What breed dog is this?" },
     img: beagle,
+    altText: `breed of small, sturdy hound dog characterized by short legs, staring upwards at the camera
+    long drooping ears, and a smooth coat typically featuring black, brown, and white markings. `
   },
   {
     category: "science",
@@ -126,6 +132,7 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What animal is this" },
     img: elephant,
+    altText: `the largest living land mammal, walking in the open field on brownish grass`
   },
   {
     category: "science",
@@ -135,6 +142,7 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What animal is this" },
     img: lion,
+    altText: `a large, predatory wildcat, sitting and looking around`
   },
   {
     category: "science",
@@ -144,6 +152,7 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What breed dog is this?" },
     img: rottweiler,
+    altText: `a large, powerful breed of working dog, staring at the camera`
   },
   {
     category: "science",
@@ -153,6 +162,8 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What breed dog is this?" },
     img: goldenRetriever,
+    altText: `popular, large breed of dog originally bred to retrieve waterfowl, staring happily 
+              at the camera with their tongue wagging.`
   },
   {
     category: "science",
@@ -162,6 +173,8 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What breed dog is this?" },
     img: labrador,
+    altText: `one of the most popular and friendly dog breeds in the world, staring happily 
+              at the camera with their tongue wagging`
   },
   {
     category: "science",
@@ -171,5 +184,6 @@ export const imageQuestions = [
     isNiche: false,
     question: { text: "What animal is this" },
     img: rabbit,
+    altText: `small, furry mammals of the family Leporidae, staring at the carmera in the woods.`
   },
 ];
