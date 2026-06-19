@@ -9,7 +9,7 @@ Time spent: **X** hours spent in total
 ## Not completed tasks (delete later)
 - [ ] implement flip method
 - [X] use useReducer to update current/longest streak
-- [ ] implement mastered cards
+- [X] implement mastered cards
 - [X] added fallback question if images don't load
 - [ ] try to fix where reload returns to home screen
 
@@ -67,7 +67,8 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 - using useReducer so longest streak and current streak actually work
-- since useState batches its update, the longest streak was not incrementing properly. So, I had to use useReducer.
+- implemented keyboard shortcuts so user can use ctrl + arrow to change cards
+- focused on defensive programming to ensure errors are handled properly and users are informed and can return to the home screen.
 
 ## License
 
