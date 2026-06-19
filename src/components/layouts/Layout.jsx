@@ -1,5 +1,6 @@
 import styles from "./Layout.module.css";
 import { Outlet } from "react-router";
+import Footer from "./Footer";
 import { useState } from "react";
 
 export default function Layout() {
@@ -51,6 +52,7 @@ export default function Layout() {
           }}
         />
       </div>
+    <Footer />
     </div>
   );
 }

@@ -25,6 +25,7 @@ CSS VARIABLES
 :root {
   /* Background Colors */
   --body-bg-color: #10002b;
+  --footer-bg-color: #240046ff;
   --flashcard-bg-color: #fcfcfc;
   --flashcard-bg-easy-color: #c5ecd0;
   --flashcard-bg-medium-color: #f8e1c3;

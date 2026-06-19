@@ -1,0 +1,11 @@
+import styles from "./Footer.module.css"
+
+export default function Footer() {
+  const year = new Date().getFullYear()
+
+  return (
+    <div className={styles.footer}>
+        <p>QuizTime - Built by Justin {"\u00A9"} {year}</p>
+    </div>
+  )
+}
