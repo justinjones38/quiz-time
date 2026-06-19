@@ -4,25 +4,29 @@ import { useEffect, useRef, useState } from "react";
 
 export default function InputAnswer({ correctAnswer, cardNumber }) {
   const [guess, setGuess] = useState("");
+  const [answer, setAnswer] = useState("")
   const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();
     setGuess("")
+    setAnswer("");
   }, [cardNumber]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("logged")
     if(correctAnswer === guess) {
-      console.log("correct!")
+      setAnswer("correct")
       return;
     }
-    console.log("wrong");
+    setAnswer("wrong")
     return;
   }
-
+console.log(answer)
   return (
     <div className={styles.container}>
+      <p className={styles.guess}>{answer ? `${answer} guess!` : null}</p>
       <form className={styles.form} onSubmit={handleSubmit}>
         {/* I am using an aria-label tag instead of an input tag */}
         <input
@@ -34,6 +38,7 @@ export default function InputAnswer({ correctAnswer, cardNumber }) {
           ref={inputRef}
           placeholder="Enter Guess"
           aria-label="Enter Guess"
+          className={`${styles.input} ${styles[answer]}`}
         />
         <button className={styles.btn}>Submit</button>
       </form>

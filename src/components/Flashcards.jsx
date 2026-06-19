@@ -26,12 +26,9 @@ export default function Flashcards({ quizData, setQuizData }) {
     // Added keyboard events so users can use the arrows on the screen to change questions
     // and flip between question and answer
     const handleKeyEvents = (e) => {
+      console.log(e);
       if(e.key === "ArrowUp" || e.key === "ArrowDown") {
         setIsQuestionShown(prev => !prev);
-      } else if (e.key === "ArrowLeft" && cardNumber !== 0) {
-        updateQuestion(false)
-      } else if (e.key === "ArrowRight" && cardNumber < quizData.length - 1) {
-        updateQuestion(true);
       }
     }
 
