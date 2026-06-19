@@ -68,7 +68,7 @@ export default function InputAnswer({
           aria-label="Enter Guess"
           className={`${styles.input} ${styles[answer]}`}
         />
-        <button className={styles.btn} disabled={answer === "correct"}>
+        <button className={styles.btn} disabled={answer === "correct" || !guess}>
           Submit
         </button>
       </form>

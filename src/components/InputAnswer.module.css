@@ -50,6 +50,14 @@
   color: var(--btn-secondary-text-color);
 }
 
+.btn:hover, btn:focus {
+  background-color: var(--btn-secondary-bg-color-hover);
+}
+
+.btn:disabled {
+  background-color: var(--btn-secondary-bg-color-disabled);
+}
+
 @media (min-width: 600px) {
   .form {
     flex-direction: row;
