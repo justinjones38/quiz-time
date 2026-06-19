@@ -1,34 +1,60 @@
 import styles from "./InputAnswer.module.css";
 import { useEffect, useRef, useState } from "react";
 
-
-export default function InputAnswer({ correctAnswer, cardNumber, incrementStreak, resetStreak }) {
+export default function InputAnswer({
+  correctAnswer,
+  cardNumber,
+  incrementStreak,
+  resetStreak,
+}) {
   const [guess, setGuess] = useState("");
-  const [answer, setAnswer] = useState("")
+  const [answer, setAnswer] = useState("");
   const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();
-    setGuess("")
+    setGuess("");
     setAnswer("");
   }, [cardNumber]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("logged")
-    if(correctAnswer === guess) {
-      setAnswer("correct")
+    // If the user gets more than 80% of the letters correct. Then the answer is marked correct.
+    // This accounts for typos.
+
+    // This splits the original guess into an array of lowercase chars
+    const splittedGuess = guess.toLowerCase().trim().split("");
+
+    // This splits the correct answer into an array of lowercase chars
+    const splittedCorrectAnswer = correctAnswer.toLowerCase().split("");
+    // Initial correct letters is set to 0
+    let correctLetters = 0;
+
+    // For each letter that matches, the correctLetters increments
+    splittedCorrectAnswer.forEach((correctLetter, index) => {
+      if (correctLetter === splittedGuess[index]) {
+        console.log(correctLetter, splittedGuess[index]);
+        correctLetters += 1;
+      }
+    });
+
+    // If the ratio of correct letters to the length of the correctAnswer is equal/greater than 80%, 
+    // then the answer is correct. This allows for minor typos.
+    if (correctLetters / splittedCorrectAnswer.length >= 0.8) {
+      setAnswer("correct");
       incrementStreak();
       return;
     }
-    setAnswer("wrong")
+    setAnswer("wrong");
     resetStreak();
     return;
-  }
-console.log(answer)
+  };
+  console.log(answer);
   return (
     <div className={styles.container}>
-      <p className={`${styles.guess} ${styles[answer]}`}>{answer ? `${answer} guess!` : null}</p>
+      <p className={`${styles.guess} ${styles[answer]}`}>
+        {answer ? `${answer} guess!` : null}
+      </p>
       <form className={styles.form} onSubmit={handleSubmit}>
         {/* I am using an aria-label tag instead of an input tag */}
         <input
@@ -42,7 +68,9 @@ console.log(answer)
           aria-label="Enter Guess"
           className={`${styles.input} ${styles[answer]}`}
         />
-        <button className={styles.btn} disabled={answer === "correct"}>Submit</button>
+        <button className={styles.btn} disabled={answer === "correct"}>
+          Submit
+        </button>
       </form>
     </div>
   );
