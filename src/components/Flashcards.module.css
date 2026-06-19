@@ -57,6 +57,8 @@
   width: 275px;
   object-fit: cover;
   aspect-ratio: 16/9;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .btnContainer {

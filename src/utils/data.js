@@ -88,7 +88,7 @@ export const imageQuestions = [
     difficulty: "easy",
     id: "userAdded1",
     isNiche: false,
-    question: { text: "What animal is this" },
+    question: { text: "What animal is this?" },
     img: fish,
     altText: `an orange water-dwelling vertebrate animal, swimming in the ocean, breathe 
               through gills and typically has fins.`
@@ -99,7 +99,7 @@ export const imageQuestions = [
     difficulty: "hard",
     id: "userAdded2",
     isNiche: false,
-    question: { text: "What animal is this" },
+    question: { text: "What animal is this?" },
     img: orca,
     altText: `the largest member of the oceanic dolphin family, jumping out of a body of water.`
   },
@@ -109,7 +109,7 @@ export const imageQuestions = [
     difficulty: "easy",
     id: "userAdded3",
     isNiche: false,
-    question: { text: "What animal is this" },
+    question: { text: "What animal is this?" },
     img: mouse,
     altText: `a small rodent staring at the camera`
   },
@@ -130,7 +130,7 @@ export const imageQuestions = [
     difficulty: "easy",
     id: "userAdded5",
     isNiche: false,
-    question: { text: "What animal is this" },
+    question: { text: "What animal is this?" },
     img: elephant,
     altText: `the largest living land mammal, walking in the open field on brownish grass`
   },
@@ -140,7 +140,7 @@ export const imageQuestions = [
     difficulty: "easy",
     id: "userAdded6",
     isNiche: false,
-    question: { text: "What animal is this" },
+    question: { text: "What animal is this?" },
     img: lion,
     altText: `a large, predatory wildcat, sitting and looking around`
   },
@@ -182,7 +182,7 @@ export const imageQuestions = [
     difficulty: "easy",
     id: "userAdded10",
     isNiche: false,
-    question: { text: "What animal is this" },
+    question: { text: "What animal is this?" },
     img: rabbit,
     altText: `small, furry mammals of the family Leporidae, staring at the carmera in the woods.`
   },
