@@ -2,7 +2,7 @@ import styles from "./Quiz.module.css";
 import { Navigate, useNavigate, useOutletContext } from "react-router";
 import { fetchQuizQuestions } from "../api/api";
 import { useEffect, useState } from "react";
-import Flashcards from "../components/Flashcards";
+import Flashcards from "../components/flashcards/FlashcardContainer";
 import { imageQuestions } from "../utils/data";
 import Error from "../components/Error";
 import { shuffleArr } from "../utils/helper";

@@ -8,7 +8,7 @@ Time spent: **X** hours spent in total
 
 ## Not completed tasks (delete later)
 - [ ] implement flip method
-- [ ] use useReducer to update current/longest streak
+- [X] use useReducer to update current/longest streak
 - [ ] implement mastered cards
 - [X] added fallback question if images don't load
 - [ ] try to fix where reload returns to home screen
