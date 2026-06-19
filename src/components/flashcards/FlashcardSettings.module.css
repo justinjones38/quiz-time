@@ -1,5 +1,5 @@
 
-.btnContainer {
+.arrowBtnContainer {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -40,23 +40,6 @@
   white-space: nowrap;
 }
 
-.settingBtn {
-  background-color: var(--btn-bg-color);
-  color: var(--btn-color);
-  transition: 0.3s background-color;
-  padding: 0.75em 1.25em;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  border-radius: var(--border-radius);
-  word-wrap: nowrap;
-}
-
-.settingBtn:hover,
-.settingBtn:focus {
-  background-color: var(--btn-bg-color-hover);
-}
 
 .linkContainer {
   display: flex;

@@ -19,6 +19,15 @@
   font-weight: 500;
 }
 
+.masteredCardBtn {
+  margin-left: auto;
+  background-color: var(--btn-secondary-bg-color);
+  color: var(--btn-secondary-text-color);
+  padding: 0.25em 1.25em;
+  border: none;
+  margin-bottom: 0.3em;
+}
+
 .flashcard {
   display: flex;
   justify-content: center;
@@ -44,15 +53,4 @@
 
 .hard {
   background-color: var(--flashcard-bg-hard-color);
-}
-
-
-.img {
-  display: block;
-  margin: 0 auto;
-  width: 275px;
-  object-fit: cover;
-  aspect-ratio: 16/9;
-  font-size: 0.9rem;
-  font-weight: 400;
 }

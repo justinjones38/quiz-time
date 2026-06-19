@@ -1,6 +1,6 @@
 import styles from "./InputAnswer.module.css";
 import { useEffect, useRef, useState } from "react";
-import { reducerAction } from "../reducer/reducer";
+import { reducerAction } from "../../reducer/reducer";
 
 export default function InputAnswer({
   correctAnswer,

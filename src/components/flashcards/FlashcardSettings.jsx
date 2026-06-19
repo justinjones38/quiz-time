@@ -1,10 +1,9 @@
 import styles from "./FlashcardSettings.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
-import InputAnswer from "../InputAnswer";
+import InputAnswer from "./InputAnswer";
 import PrimaryBtn from "../buttons/PrimaryBtn";
 import { Link } from "react-router";
-
 
 export default function FlashcardSettings({
   cardNumber,
@@ -13,10 +12,11 @@ export default function FlashcardSettings({
   dispatch,
   handleShuffle,
   resetCardDeck,
+  addMasteredCards
 }) {
   return (
     <>
-      <div className={styles.btnContainer}>
+      <div className={styles.arrowBtnContainer}>
         <button
           className={styles.quizBtn}
           disabled={cardNumber === 0}
@@ -37,12 +37,19 @@ export default function FlashcardSettings({
         cardNumber={cardNumber}
         dispatch={dispatch}
       />
-      <div className={styles.settingBtnContainer}>
-        <PrimaryBtn onClick={handleShuffle}>Shuffle Cards</PrimaryBtn>
-        {cardNumber > 0 ? (
-          <PrimaryBtn onClick={resetCardDeck}> Reset Card Deck</PrimaryBtn>
-        ) : null}
-      </div>
+ 
+        <div className={styles.settingBtnContainer}>
+       <PrimaryBtn
+          onClick={() => addMasteredCards(quizData[cardNumber])}
+        >
+          Mastered Card{" "}
+        </PrimaryBtn>
+          <PrimaryBtn onClick={handleShuffle}>Shuffle Cards</PrimaryBtn>
+          {cardNumber > 0 ? (
+            <PrimaryBtn onClick={resetCardDeck}> Reset Card Deck</PrimaryBtn>
+          ) : null}
+        </div>
+
       <div className={styles.linkContainer}>
         <Link to="/" className={styles.linkBtn}>
           Return Home
