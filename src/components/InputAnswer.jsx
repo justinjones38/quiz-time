@@ -49,7 +49,6 @@ export default function InputAnswer({
     resetStreak();
     return;
   };
-  console.log(answer);
   return (
     <div className={styles.container}>
       <p className={`${styles.guess} ${styles[answer]}`}>
@@ -67,6 +66,7 @@ export default function InputAnswer({
           placeholder="Enter Guess"
           aria-label="Enter Guess"
           className={`${styles.input} ${styles[answer]}`}
+          autoComplete="off"
         />
         <button className={styles.btn} disabled={answer === "correct" || !guess}>
           Submit
