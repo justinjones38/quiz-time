@@ -45,7 +45,7 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
     return () => document.removeEventListener("keydown", handleKeyEvents);
   });
 
-  if(masteredCards.length === 10) {
+  if(masteredCards.length > 0 && quizData.length === 0) {
     return (
       <Navigate 
         to="/"
