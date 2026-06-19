@@ -2,7 +2,7 @@ import styles from "./InputAnswer.module.css";
 import { useEffect, useRef, useState } from "react";
 
 
-export default function InputAnswer({ correctAnswer, cardNumber }) {
+export default function InputAnswer({ correctAnswer, cardNumber, incrementStreak, resetStreak }) {
   const [guess, setGuess] = useState("");
   const [answer, setAnswer] = useState("")
   const inputRef = useRef(null);
@@ -18,9 +18,11 @@ export default function InputAnswer({ correctAnswer, cardNumber }) {
     console.log("logged")
     if(correctAnswer === guess) {
       setAnswer("correct")
+      incrementStreak();
       return;
     }
     setAnswer("wrong")
+    resetStreak();
     return;
   }
 console.log(answer)
@@ -40,7 +42,7 @@ console.log(answer)
           aria-label="Enter Guess"
           className={`${styles.input} ${styles[answer]}`}
         />
-        <button className={styles.btn}>Submit</button>
+        <button className={styles.btn} disabled={answer === "correct"}>Submit</button>
       </form>
     </div>
   );

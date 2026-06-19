@@ -10,7 +10,10 @@ import InputAnswer from "./InputAnswer";
 export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
-  console.log(quizData);
+  const [record, setRecord] = useState({
+    currentStreak: 0,
+    longestStreak: 0
+  })
 
   const updateQuestion = (isNextBtnClicked) => {
     if (isNextBtnClicked) {
@@ -26,21 +29,23 @@ export default function Flashcards({ quizData, setQuizData }) {
     // Added keyboard events so users can use the arrows on the screen to change questions
     // and flip between question and answer
     const handleKeyEvents = (e) => {
-      console.log(e);
-      if(e.ctrlKey && e.key === " ") {
-        setIsQuestionShown(prev => !prev);
-      } else if (e.ctrlKey && e.key === "ArrowLeft" && cardNumber !== 0 ) {
-        updateQuestion(false)
-      } else if (e.ctrlKey && e.key === "ArrowRight" && cardNumber < quizData.length - 1) {
+      if (e.ctrlKey && e.key === " ") {
+        setIsQuestionShown((prev) => !prev);
+      } else if (e.ctrlKey && e.key === "ArrowLeft" && cardNumber !== 0) {
+        updateQuestion(false);
+      } else if (
+        e.ctrlKey &&
+        e.key === "ArrowRight" &&
+        cardNumber < quizData.length - 1
+      ) {
         updateQuestion(true);
       }
-    }
+    };
 
     document.addEventListener("keydown", handleKeyEvents);
 
     return () => document.removeEventListener("keydown", handleKeyEvents);
-  })
-
+  });
 
   if (quizData.length === 0) {
     return (
@@ -63,11 +68,22 @@ export default function Flashcards({ quizData, setQuizData }) {
     setQuizData((prev) => shuffleArr(prev));
   };
 
+  const incrementStreak = () => setRecord((prev) =>{
+  const newStreak = prev.currentStreak + 1
+   return {...prev, 
+    currentStreak: newStreak,
+    longestStreak: prev.longestStreak > newStreak ? prev.longestStreak : newStreak
+  }});
+  const resetStreak = () => setRecord(prev => ({...prev, currentStreak: 0}));
   return (
     <div className={styles.container}>
       <p className={styles.description}>
         Test your trivial skills with fun, thought-provoking, random questions
       </p>
+      <div className={styles.streakContainer}>
+        <p className={styles.currentStreak}>Current Streak: {record.currentStreak}</p>
+        <p className={styles.longestStreak}>Longest Streak: {record.longestStreak}</p>
+      </div>
       <p className={styles.cardNumber}>
         Card {cardNumber + 1} of {quizData.length}
       </p>
@@ -112,16 +128,16 @@ export default function Flashcards({ quizData, setQuizData }) {
           <FaArrowRight />
         </button>
       </div>
-      <InputAnswer correctAnswer={quizData[cardNumber].correctAnswer} cardNumber={cardNumber}  />
+      <InputAnswer
+        correctAnswer={quizData[cardNumber].correctAnswer}
+        cardNumber={cardNumber}
+        incrementStreak={incrementStreak}
+        resetStreak={resetStreak}
+      />
       <div className={styles.settingBtnContainer}>
-        <PrimaryBtn onClick={handleShuffle}>
-          Shuffle Cards
-        </PrimaryBtn>
+        <PrimaryBtn onClick={handleShuffle}>Shuffle Cards</PrimaryBtn>
         {cardNumber > 0 ? (
-          <PrimaryBtn onClick={resetCardDeck} >
-            {" "}
-            Reset Card Deck
-          </PrimaryBtn>
+          <PrimaryBtn onClick={resetCardDeck}> Reset Card Deck</PrimaryBtn>
         ) : null}
       </div>
       <div className={styles.linkContainer}>
