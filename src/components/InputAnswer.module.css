@@ -9,6 +9,14 @@
   min-height: 30px;
 }
 
+.guess.correct {
+  color: var(--correct-guess);
+}
+
+.guess.wrong {
+  color: var(--wrong-guess);
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -25,11 +33,11 @@
 }
 
 .input.correct {
-  border: 3px solid green;
+  border: 3px solid var(--correct-border-color);
 }
 
 .input.wrong {
-  border: 3px solid red;
+  border: 3px solid var(--wrong-border-color);
 }
 
 .input:focus, .input:focus {

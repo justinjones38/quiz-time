@@ -36,6 +36,8 @@ CSS VARIABLES
   --primary-text-color: #FCFCFC;
   --flashcard-text-color: #242424;
   --alert-text-color: #F2B5B5;
+  --correct-guess: #95FF80;
+  --wrong-guess: #FF9999;
 
   /* Button Colors */
   --btn-bg-color: #7b2cbf;
@@ -52,6 +54,8 @@ CSS VARIABLES
   /* Reusable Properties */
   --border-radius: 10px;
   --input-border-color: #fcfcfc;
+  --correct-border-color: rgb(21, 255, 21);
+  --wrong-border-color: rgb(245, 0, 0);
 }
 
 /* ===============

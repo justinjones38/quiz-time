@@ -26,7 +26,7 @@ export default function InputAnswer({ correctAnswer, cardNumber }) {
 console.log(answer)
   return (
     <div className={styles.container}>
-      <p className={styles.guess}>{answer ? `${answer} guess!` : null}</p>
+      <p className={`${styles.guess} ${styles[answer]}`}>{answer ? `${answer} guess!` : null}</p>
       <form className={styles.form} onSubmit={handleSubmit}>
         {/* I am using an aria-label tag instead of an input tag */}
         <input

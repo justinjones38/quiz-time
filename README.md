@@ -40,8 +40,9 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [ ] List anything else that you added to improve the site's functionality!
+- I added keyboard shortcuts so users can change flashcards using the arrow keys. I used shiftLeft and shiftRight to switch cards since arrows are used for inputs. I am looking to update that in the future
 - I added useRef, so the text input is automatically focused, so user can start typing.
-- I focused a lot on improving error handling and ensuring I am using defensive programming
+- I focused a lot on improving error handling and defensive programming
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:

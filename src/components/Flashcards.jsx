@@ -27,8 +27,12 @@ export default function Flashcards({ quizData, setQuizData }) {
     // and flip between question and answer
     const handleKeyEvents = (e) => {
       console.log(e);
-      if(e.key === "ArrowUp" || e.key === "ArrowDown") {
+      if(e.ctrlKey && e.key === " ") {
         setIsQuestionShown(prev => !prev);
+      } else if (e.ctrlKey && e.key === "ArrowLeft" && cardNumber !== 0 ) {
+        updateQuestion(false)
+      } else if (e.ctrlKey && e.key === "ArrowRight" && cardNumber < quizData.length - 1) {
+        updateQuestion(true);
       }
     }
 
