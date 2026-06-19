@@ -67,6 +67,9 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
   };
 
   const addMasteredCards = (card) => {
+    if(cardNumber === quizData.length - 1) {
+      setCardNumber(prev => prev - 1)
+    };
     setMasteredCards((prev) => [
       ...prev,
       quizData.find((item) => item.id === card.id),
