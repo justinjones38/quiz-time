@@ -24,7 +24,7 @@ export default function InputAnswer({ correctAnswer, cardNumber }) {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <label htmlFor="guess">Enter Guess</label>
+        {/* I am using an aria-label tag instead of an input tag */}
         <input
           type="text"
           value={guess}
@@ -32,6 +32,8 @@ export default function InputAnswer({ correctAnswer, cardNumber }) {
           onChange={(e) => setGuess(e.target.value)}
           className={styles.input}
           ref={inputRef}
+          placeholder="Enter Guess"
+          aria-label="Enter Guess"
         />
         <button className={styles.btn}>Submit</button>
       </form>
