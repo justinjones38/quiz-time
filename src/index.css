@@ -36,6 +36,7 @@ CSS VARIABLES
   --primary-text-color: #FCFCFC;
   --flashcard-text-color: #242424;
   --alert-text-color: #F2B5B5;
+  --finished-text-color: #95FF80;
   --correct-guess: #95FF80;
   --wrong-guess: #FF9999;
 

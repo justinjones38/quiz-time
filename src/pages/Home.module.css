@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.finished {
+  text-align: center;
+  color: var(--finished-text-color)
+}
+
 .alert {
   text-align: center;
   color: var(--alert-text-color);

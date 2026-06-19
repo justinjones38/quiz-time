@@ -54,3 +54,11 @@
 .hard {
   background-color: var(--flashcard-bg-hard-color);
 }
+
+@media (min-width: 600px) {
+  .streakContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1.25em;
+  }
+}
