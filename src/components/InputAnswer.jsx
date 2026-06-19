@@ -1,11 +1,11 @@
 import styles from "./InputAnswer.module.css";
 import { useEffect, useRef, useState } from "react";
+import { reducerAction } from "../reducer/reducer";
 
 export default function InputAnswer({
   correctAnswer,
   cardNumber,
-  incrementStreak,
-  resetStreak,
+  dispatch,
 }) {
   const [guess, setGuess] = useState("");
   const [answer, setAnswer] = useState("");
@@ -33,7 +33,6 @@ export default function InputAnswer({
     // For each letter that matches, the correctLetters increments
     splittedCorrectAnswer.forEach((correctLetter, index) => {
       if (correctLetter === splittedGuess[index]) {
-        console.log(correctLetter, splittedGuess[index]);
         correctLetters += 1;
       }
     });
@@ -42,11 +41,11 @@ export default function InputAnswer({
     // then the answer is correct. This allows for minor typos.
     if (correctLetters / splittedCorrectAnswer.length >= 0.8) {
       setAnswer("correct");
-      incrementStreak();
+      dispatch({type: reducerAction["INCREMENT_STREAK"]});
       return;
     }
     setAnswer("wrong");
-    resetStreak();
+    dispatch({type: reducerAction["RESET_STREAK"]})
     return;
   };
   return (

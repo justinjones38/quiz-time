@@ -10,7 +10,7 @@ Time spent: **X** hours spent in total
 - [ ] implement flip method
 - [ ] use useReducer to update current/longest streak
 - [ ] implement mastered cards
-- [ ] added fallback question if images don't load
+- [X] added fallback question if images don't load
 - [ ] try to fix where reload returns to home screen
 
 ## Required Features

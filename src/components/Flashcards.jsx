@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import styles from "./Flashcards.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
@@ -6,14 +6,14 @@ import { Link, Navigate } from "react-router";
 import { shuffleArr } from "../utils/helper";
 import PrimaryBtn from "./buttons/PrimaryBtn";
 import InputAnswer from "./InputAnswer";
+import {initialValue, reducer } from "../reducer/reducer";
 
 export default function Flashcards({ quizData, setQuizData }) {
   const [isQuestionShown, setIsQuestionShown] = useState(true);
   const [cardNumber, setCardNumber] = useState(0);
-  const [record, setRecord] = useState({
-    currentStreak: 0,
-    longestStreak: 0
-  })
+  const [state, dispatch] = useReducer(reducer, initialValue);
+  console.log(dispatch, reducer);
+  console.log(initialValue);
 
   const updateQuestion = (isNextBtnClicked) => {
     if (isNextBtnClicked) {
@@ -29,7 +29,6 @@ export default function Flashcards({ quizData, setQuizData }) {
     // Added keyboard events so users can use the arrows on the screen to change questions
     // and flip between question and answer
     const handleKeyEvents = (e) => {
-      console.log(e)
       if (e.ctrlKey && e.key === "ArrowUp" || e.key === "ArrowDown") {
         setIsQuestionShown((prev) => !prev);
       } else if (e.ctrlKey && e.key === "ArrowLeft" && cardNumber !== 0) {
@@ -69,21 +68,15 @@ export default function Flashcards({ quizData, setQuizData }) {
     setQuizData((prev) => shuffleArr(prev));
   };
 
-  const incrementStreak = () => setRecord((prev) =>{
-  const newStreak = prev.currentStreak + 1
-   return {...prev, 
-    currentStreak: newStreak,
-    longestStreak: prev.longestStreak > newStreak ? prev.longestStreak : newStreak
-  }});
-  const resetStreak = () => setRecord(prev => ({...prev, currentStreak: 0}));
+
   return (
     <div className={styles.container}>
       <p className={styles.description}>
         Test your trivial skills with fun, thought-provoking, random questions
       </p>
       <div className={styles.streakContainer}>
-        <p className={styles.currentStreak}>Current Streak: {record.currentStreak}</p>
-        <p className={styles.longestStreak}>Longest Streak: {record.longestStreak}</p>
+        <p className={styles.currentStreak}>Current Streak: {state.currentStreak} </p>
+        <p className={styles.longestStreak}>Longest Streak: {state.longestStreak}</p>
       </div>
       <p className={styles.cardNumber}>
         Card {cardNumber + 1} of {quizData.length}
@@ -132,8 +125,7 @@ export default function Flashcards({ quizData, setQuizData }) {
       <InputAnswer
         correctAnswer={quizData[cardNumber].correctAnswer}
         cardNumber={cardNumber}
-        incrementStreak={incrementStreak}
-        resetStreak={resetStreak}
+        dispatch={dispatch}
       />
       <div className={styles.settingBtnContainer}>
         <PrimaryBtn onClick={handleShuffle}>Shuffle Cards</PrimaryBtn>
