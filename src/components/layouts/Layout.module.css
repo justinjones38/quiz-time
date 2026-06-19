@@ -1,6 +1,15 @@
-.mainContainer {
+.container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  width: 97%;
+  margin: 0 auto;
+  max-width: 1000px;
   padding-bottom: 1em;
 }
+

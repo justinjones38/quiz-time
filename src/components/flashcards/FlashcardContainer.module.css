@@ -1,0 +1,64 @@
+.description,
+.cardNumber {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.container {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.streakContainer {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.cardNumber {
+  font-weight: 500;
+}
+
+.masteredCardBtn {
+  margin-left: auto;
+  background-color: var(--btn-secondary-bg-color);
+  color: var(--btn-secondary-text-color);
+  padding: 0.25em 1.25em;
+  border: none;
+  margin-bottom: 0.3em;
+}
+
+.flashcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--flashcard-text-color);
+  font-weight: 500;
+  min-height: 200px;
+  background-color: var(--flashcard-bg-color);
+  padding: 0.75em 1.25em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+.easy {
+  background-color: var(--flashcard-bg-easy-color);
+}
+
+.medium {
+  background-color: var(--flashcard-bg-medium-color);
+}
+
+.hard {
+  background-color: var(--flashcard-bg-hard-color);
+}
+
+@media (min-width: 600px) {
+  .streakContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1.25em;
+  }
+}

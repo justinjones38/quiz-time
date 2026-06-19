@@ -1,8 +1,12 @@
 .description {
   font-size: 1rem;
-  font-weight: 400;
   margin-bottom: 1em;
   text-align: center;
+}
+
+.finished {
+  text-align: center;
+  color: var(--finished-text-color)
 }
 
 .alert {

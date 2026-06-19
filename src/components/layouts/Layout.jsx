@@ -1,5 +1,6 @@
 import styles from "./Layout.module.css";
 import { Outlet } from "react-router";
+import Footer from "./Footer";
 import { useState } from "react";
 
 export default function Layout() {
@@ -39,9 +40,9 @@ export default function Layout() {
   };
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.container}>
       <h1 className={styles.title}>Quiz Time</h1>
-      <div className={styles.bodyContainer}>
+      <div className={styles.mainContent}>
         <Outlet
           context={{
             setupAnswers,
@@ -51,6 +52,7 @@ export default function Layout() {
           }}
         />
       </div>
+    <Footer />
     </div>
   );
 }

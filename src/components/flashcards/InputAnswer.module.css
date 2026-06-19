@@ -1,0 +1,75 @@
+.container {
+  margin-bottom: 0.75em;
+  width: 98%;
+  max-width: 250px;
+  margin: 0 auto 2.5em auto;
+}
+
+.guess {
+  min-height: 30px;
+}
+
+.guess.correct {
+  color: var(--correct-guess);
+}
+
+.guess.wrong {
+  color: var(--wrong-guess);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+
+.input, .btn {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.3em 0.5em;
+  border-radius: 4px;
+  font-size: 1.05rem;
+}
+
+.input.correct {
+  border: 3px solid var(--correct-border-color);
+}
+
+.input.wrong {
+  border: 3px solid var(--wrong-border-color);
+}
+
+.input:focus, .input:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: var(--btn-secondary-bg-color);
+  border: none;
+  color: var(--btn-secondary-text-color);
+}
+
+.btn:hover, btn:focus {
+  background-color: var(--btn-secondary-bg-color-hover);
+}
+
+.btn:disabled {
+  background-color: var(--btn-secondary-bg-color-disabled);
+}
+
+@media (min-width: 600px) {
+  .form {
+    flex-direction: row;
+  }
+
+  .container {
+    max-width: 450px;
+  }
+  .input {
+    flex: 2 2 150px;
+  }
+  .btn {
+    flex: 1;
+  }
+}

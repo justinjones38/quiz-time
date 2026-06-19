@@ -13,36 +13,51 @@ RESET CSS
 /* ===============
 CSS VARIABLES
 ================== */
+/* --dark-amethyst: #10002bff;
+--dark-amethyst-2: #240046ff;
+--indigo-ink: #3c096cff;
+--indigo-velvet: #5a189aff;
+--royal-violet: #7b2cbfff;
+--lavender-purple: #9d4eddff;
+--mauve-magic: #c77dffff;
+--mauve: #e0aaffff; */
 
 :root {
   /* Background Colors */
-  --body-bg-color: #23295cee;
+  --body-bg-color: #10002b;
+  --footer-bg-color: #240046ff;
   --flashcard-bg-color: #fcfcfc;
   --flashcard-bg-easy-color: #c5ecd0;
   --flashcard-bg-medium-color: #f8e1c3;
   --flashcard-bg-hard-color: #fecdcd;
-  --selected-bg-color: #7a85eaee;
-  --selected-bg-hover-color: #7a85ea74;
+  --selected-bg-color: #9d4edd;
+  --selected-bg-hover-color: #7b2cbfff;
 
   /* Font Colors */
-  --primary-text-color: #fcfcfc;
+  --primary-text-color: #FCFCFC;
   --flashcard-text-color: #242424;
-  --alert-text-color: #f27575;
+  --alert-text-color: #F2B5B5;
+  --finished-text-color: #95FF80;
+  --correct-guess: #95FF80;
+  --wrong-guess: #FF9999;
 
   /* Button Colors */
-  --button-bg-color: #f6f6f9;
-  --button-bg-disabled-color: #f6f6f975;
-  --button-bg-hover-color: #e1e1f5;
+  --btn-bg-color: #7b2cbf;
+  --btn-bg-color-hover: #c77dffff;
+  --btn-bg-color-disabled: #2e2b30b2;
+  --btn-color: #FFFFFF;
+  --btn-secondary-bg-color: #e0aaffff;
+  --btn-secondary-bg-color-hover: #e0aaffff;
+  --btn-secondary-bg-color-disabled: rgba(224, 170, 255, 0.603);
+  --btn-secondary-text-color: #050505;
   --reset-btn-background: #6b1919;
   --reset-btn-hover-background: #c44444;
-  --button-text-color: #242424;
-  --setting-btn-background: #242424;
-  --setting-btn-background-hover: #575656;
-  --setting-btn-color: #fcfcfc;
 
   /* Reusable Properties */
   --border-radius: 10px;
   --input-border-color: #fcfcfc;
+  --correct-border-color: rgb(21, 255, 21);
+  --wrong-border-color: rgb(245, 0, 0);
 }
 
 /* ===============
@@ -56,6 +71,10 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+button {
+  display: block;
+}
+
 button:hover,
 button:focus {
   cursor: pointer;
@@ -64,6 +83,10 @@ button:focus {
 button,
 a {
   font-family: inherit;
+}
+
+button:disabled {
+  cursor: initial;
 }
 
 img {
@@ -84,10 +107,24 @@ h1 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25em;
 }
 
 h2 {
   font-size: 1.5rem;
   text-align: center;
   font-weight: 500;
+}
+
+/* ===============
+MEDIA QUERIES
+================== */
+
+
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 17px;
+  }
 }

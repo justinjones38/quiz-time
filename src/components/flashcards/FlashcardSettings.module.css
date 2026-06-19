@@ -1,0 +1,66 @@
+
+.arrowBtnContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25em;
+}
+
+.quizBtn {
+  font-size: 1.5rem;
+  min-width: 70px;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+  border-radius: 6px;
+  padding: 0.2em 0.75em;
+  border: none;
+}
+
+.quizBtn:focus,
+.quizBtn:hover {
+  cursor: pointer;
+  background-color: var(--btn-bg-color-hover);
+}
+
+.quizBtn:disabled {
+  background-color: var(--btn-bg-color-disabled);
+}
+
+.settingBtnContainer {
+  width: 98%;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-bottom: 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  white-space: nowrap;
+}
+
+
+.linkContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.linkBtn {
+  text-align: center;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  transition: 0.3s border-box;
+}
+
+.linkBtn:hover,
+.linkBtn:focus {
+  border-bottom: 3px solid var(--input-border-color);
+}
+
+@media (min-width: 600px) {
+  .settingBtnContainer {
+    flex-direction: row;
+    align-items: unset;
+  }
+}
