@@ -1,6 +1,6 @@
 import styles from "./FlashcardQuestion.module.css";
 
-export default function FlashcardQuestion({quizData, cardNumber}) {
+export default function FlashcardQuestion({ quizData, cardNumber }) {
   return (
     <div className={styles.frontCard}>
       <p className={styles.question}>

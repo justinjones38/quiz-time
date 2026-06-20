@@ -12,7 +12,7 @@ export default function FlashcardSettings({
   dispatch,
   handleShuffle,
   resetCardDeck,
-  addMasteredCards
+  addMasteredCards,
 }) {
   return (
     <>
@@ -37,18 +37,16 @@ export default function FlashcardSettings({
         cardNumber={cardNumber}
         dispatch={dispatch}
       />
- 
-        <div className={styles.settingBtnContainer}>
-       <PrimaryBtn
-          onClick={() => addMasteredCards(quizData[cardNumber])}
-        >
+
+      <div className={styles.settingBtnContainer}>
+        <PrimaryBtn onClick={() => addMasteredCards(quizData[cardNumber])}>
           Mastered Card{" "}
         </PrimaryBtn>
-          <PrimaryBtn onClick={handleShuffle}>Shuffle Cards</PrimaryBtn>
-          {cardNumber > 0 ? (
-            <PrimaryBtn onClick={resetCardDeck}> Reset Card Deck</PrimaryBtn>
-          ) : null}
-        </div>
+        <PrimaryBtn onClick={handleShuffle}>Shuffle Cards</PrimaryBtn>
+        {cardNumber > 0 ? (
+          <PrimaryBtn onClick={resetCardDeck}> Reset Card Deck</PrimaryBtn>
+        ) : null}
+      </div>
 
       <div className={styles.linkContainer}>
         <Link to="/" className={styles.linkBtn}>

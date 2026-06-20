@@ -6,7 +6,7 @@
 
 .finished {
   text-align: center;
-  color: var(--finished-text-color)
+  color: var(--finished-text-color);
 }
 
 .alert {

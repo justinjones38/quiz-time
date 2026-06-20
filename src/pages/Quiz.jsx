@@ -13,7 +13,7 @@ export default function Quiz() {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(false);
   const [isSetUpAnswered, setIsSetupAnswered] = useState(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -21,7 +21,6 @@ export default function Quiz() {
         setupAnswers.categories,
         setupAnswers.difficulties,
       );
-      // This receives the array and shuffles it
       setQuizData(fetchResults);
     } catch (err) {
       setError(true);
@@ -30,21 +29,19 @@ export default function Quiz() {
     }
   };
   useEffect(() => {
-    if(setupAnswers.quizType === "") {
+    if (setupAnswers.quizType === "") {
       setIsSetupAnswered(false);
     }
     if (setupAnswers.quizType === "imageBased") {
       setQuizData(imageQuestions);
       return;
-    } 
+    }
     fetchData();
   }, []);
 
-
-  if(!isSetUpAnswered) {
-    return <Navigate to="/" replace />
+  if (!isSetUpAnswered) {
+    return <Navigate to="/" replace />;
   }
-
 
   return (
     <div className={styles.container}>

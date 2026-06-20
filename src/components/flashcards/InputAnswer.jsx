@@ -2,11 +2,7 @@ import styles from "./InputAnswer.module.css";
 import { useEffect, useRef, useState } from "react";
 import { reducerAction } from "../../reducer/reducer";
 
-export default function InputAnswer({
-  correctAnswer,
-  cardNumber,
-  dispatch,
-}) {
+export default function InputAnswer({ correctAnswer, cardNumber, dispatch }) {
   const [guess, setGuess] = useState("");
   const [answer, setAnswer] = useState("");
   const inputRef = useRef(null);
@@ -37,15 +33,15 @@ export default function InputAnswer({
       }
     });
 
-    // If the ratio of correct letters to the length of the correctAnswer is equal/greater than 80%, 
+    // If the ratio of correct letters to the length of the correctAnswer is equal/greater than 80%,
     // then the answer is correct. This allows for minor typos.
     if (correctLetters / splittedCorrectAnswer.length >= 0.8) {
       setAnswer("correct");
-      dispatch({type: reducerAction["INCREMENT_STREAK"]});
+      dispatch({ type: reducerAction["INCREMENT_STREAK"] });
       return;
     }
     setAnswer("wrong");
-    dispatch({type: reducerAction["RESET_STREAK"]})
+    dispatch({ type: reducerAction["RESET_STREAK"] });
     return;
   };
   return (
@@ -67,7 +63,10 @@ export default function InputAnswer({
           className={`${styles.input} ${styles[answer]}`}
           autoComplete="off"
         />
-        <button className={styles.btn} disabled={answer === "correct" || !guess}>
+        <button
+          className={styles.btn}
+          disabled={answer === "correct" || !guess}
+        >
           Submit
         </button>
       </form>

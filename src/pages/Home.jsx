@@ -8,7 +8,15 @@ export default function Home() {
     <div className={styles.container}>
       <h2 className={styles.pageTitle}>Welcome!</h2>
       {location.state?.message ? (
-        <p className={location.state?.completed ? `${styles["finished"]}` : `${styles["alert"]}`}>{location.state.message}</p>
+        <p
+          className={
+            location.state?.completed
+              ? `${styles["finished"]}`
+              : `${styles["alert"]}`
+          }
+        >
+          {location.state.message}
+        </p>
       ) : null}
       <p className={styles.description}>
         Please answer the questions below to get started with your quiz

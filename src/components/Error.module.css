@@ -29,7 +29,7 @@
   text-decoration: none;
 }
 
-.btn:hover, 
+.btn:hover,
 .btn:focus {
   background-color: var(--button-bg-hover-color);
 }
