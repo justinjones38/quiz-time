@@ -56,7 +56,6 @@ export default function InputAnswer({ correctAnswer, cardNumber, dispatch }) {
           value={guess}
           id="guess"
           onChange={(e) => setGuess(e.target.value)}
-          className={styles.input}
           ref={inputRef}
           placeholder="Enter Guess"
           aria-label="Enter Guess"
