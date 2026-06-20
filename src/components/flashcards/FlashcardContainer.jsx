@@ -43,7 +43,7 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
     document.addEventListener("keydown", handleKeyEvents);
 
     return () => document.removeEventListener("keydown", handleKeyEvents);
-  });
+  }, []);
 
   if (masteredCards.length > 0 && quizData.length === 0) {
     return (
