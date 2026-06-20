@@ -45,17 +45,18 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
     return () => document.removeEventListener("keydown", handleKeyEvents);
   });
 
-  if(masteredCards.length > 0 && quizData.length === 0) {
+  if (masteredCards.length > 0 && quizData.length === 0) {
     return (
-      <Navigate 
+      <Navigate
         to="/"
         state={{
-          message: "Congratulations! You have mastered all flashcards. Please adjust settings and try some more.",
+          message:
+            "Congratulations! You have mastered all flashcards. Please adjust settings and try some more.",
           completed: true,
         }}
       />
-    )
-  }  
+    );
+  }
 
   if (quizData.length === 0) {
     return (
@@ -63,7 +64,7 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
         to="/"
         state={{
           message: "Try different settings. Cannot find any flashcards",
-          completed: false
+          completed: false,
         }}
       />
     );
@@ -80,9 +81,9 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
   };
 
   const addMasteredCards = (card) => {
-    if(cardNumber === quizData.length - 1) {
-      setCardNumber(prev => prev - 1)
-    };
+    if (cardNumber === quizData.length - 1) {
+      setCardNumber((prev) => prev - 1);
+    }
     setIsQuestionShown(true);
     setMasteredCards((prev) => [
       ...prev,
@@ -126,7 +127,6 @@ export default function FlashcardContainer({ quizData, setQuizData }) {
         resetCardDeck={resetCardDeck}
         addMasteredCards={addMasteredCards}
       />
-
     </div>
   );
 }

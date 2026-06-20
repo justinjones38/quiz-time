@@ -76,9 +76,8 @@ export default function SetupForm({}) {
           <button onClick={resetSettings} className={styles.resetBtn}>
             Clear Answers
           </button>
-      ) : null}
+        ) : null}
       </div>
-
     </form>
   );
 }

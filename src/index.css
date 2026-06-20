@@ -34,18 +34,18 @@ CSS VARIABLES
   --selected-bg-hover-color: #7b2cbfff;
 
   /* Font Colors */
-  --primary-text-color: #FCFCFC;
+  --primary-text-color: #fcfcfc;
   --flashcard-text-color: #242424;
-  --alert-text-color: #F2B5B5;
-  --finished-text-color: #95FF80;
-  --correct-guess: #95FF80;
-  --wrong-guess: #FF9999;
+  --alert-text-color: #f2b5b5;
+  --finished-text-color: #95ff80;
+  --correct-guess: #95ff80;
+  --wrong-guess: #ff9999;
 
   /* Button Colors */
   --btn-bg-color: #7b2cbf;
   --btn-bg-color-hover: #c77dffff;
   --btn-bg-color-disabled: #2e2b30b2;
-  --btn-color: #FFFFFF;
+  --btn-color: #ffffff;
   --btn-secondary-bg-color: #e0aaffff;
   --btn-secondary-bg-color-hover: #e0aaffff;
   --btn-secondary-bg-color-disabled: rgba(224, 170, 255, 0.603);
@@ -120,8 +120,6 @@ h2 {
 /* ===============
 MEDIA QUERIES
 ================== */
-
-
 
 @media (min-width: 1000px) {
   html {

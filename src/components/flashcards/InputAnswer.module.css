@@ -23,8 +23,8 @@
   gap: 0.25em;
 }
 
-
-.input, .btn {
+.input,
+.btn {
   width: 100%;
   margin: 0 auto;
   padding: 0.3em 0.5em;
@@ -40,7 +40,8 @@
   border: 3px solid var(--wrong-border-color);
 }
 
-.input:focus, .input:focus {
+.input:focus,
+.input:focus {
   outline: none;
 }
 
@@ -50,12 +51,13 @@
   color: var(--btn-secondary-text-color);
 }
 
-.btn:hover, btn:focus {
+.btn:hover,
+btn:focus {
   background-color: var(--btn-secondary-bg-color-hover);
 }
 
 .btn:active {
-  border: 2px solid var(--input-border-color)
+  border: 2px solid var(--input-border-color);
 }
 .btn:disabled {
   background-color: var(--btn-secondary-bg-color-disabled);
