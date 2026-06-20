@@ -22,7 +22,7 @@ export default function Quiz() {
         setupAnswers.difficulties,
       );
       // This receives the array and shuffles it
-      setQuizData(shuffleArr(fetchResults));
+      setQuizData(fetchResults);
     } catch (err) {
       setError(true);
     } finally {
