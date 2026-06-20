@@ -54,6 +54,9 @@
   background-color: var(--btn-secondary-bg-color-hover);
 }
 
+.btn:active {
+  border: 2px solid var(--input-border-color)
+}
 .btn:disabled {
   background-color: var(--btn-secondary-bg-color-disabled);
 }
