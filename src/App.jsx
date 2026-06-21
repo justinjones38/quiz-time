@@ -4,10 +4,12 @@ import Home from "./pages/Home";
 import Quiz from "./pages/Quiz";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/layouts/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
